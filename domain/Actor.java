@@ -23,4 +23,5 @@ public class Actor {
 
     @OneToMany(mappedBy = "actor")
     private List<Participates> participates = new ArrayList<>();
+
 }
