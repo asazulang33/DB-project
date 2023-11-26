@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Art Gallery</title>
+  <!-- 스타일시트 및 기타 헤더 정보 -->
+</head>
+<body>
+<div class="container">
+
+  <h2>Art List</h2>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Art ID</th>
+      <th>Genre</th>
+      <th>Art Name</th>
+      <th>Filmed Locations</th>
+      <th>Actors</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="art : ${arts}">
+      <td th:text="${art.id}"></td>
+      <td th:text="${art.name}"></td>
+      <td th:text="${art.genreStatus}"></td>
+      <td>
+        <ul>
+          <li th:each="filmed : ${art.filmedList}"
+              th:text="${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}">
+          </li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li th:each="participate : ${art.participates}"
+              th:text="${participate.actorName}">
+          </li>
+        </ul>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+</body>
+</html>
