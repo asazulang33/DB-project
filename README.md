@@ -11,7 +11,7 @@
 
 11.27일자 하나의 Art가 여러 장소에서 촬영될 수 있음을 반영
 
-![image](https://github.com/asazulang33/DB-project/assets/88483964/b4fca3df-412e-4aa7-82db-3d068013dc8a)
+![image](https://github.com/asazulang33/DB-project/assets/88483964/f6003853-2264-48af-a3bf-211a03d236f7)
 ![image](https://github.com/asazulang33/DB-project/assets/88483964/47f39a0c-2789-4a8f-a7d9-e8b9b8095f6e)
 ![image](https://github.com/asazulang33/DB-project/assets/88483964/12572a66-9452-4ffc-a212-db2a124f2c36)
 
