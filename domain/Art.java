@@ -44,12 +44,16 @@ public class Art {
         participate.setArt(this);
     }
 
-    public static Art createArtDrama(String artName, Integer year, Filmed filmed, List<Actor> actors) {
+    // 비즈니스 로직
+    public static Art createArt(String artName, Integer year, List<Filmed> filmedList, List<Actor> actors, GenreStatus genreStatus) {
         Art art = new Art();
         art.setName(artName);
         art.setYear(year);
-        art.addFilmed(filmed);
-        art.setGenreStatus(GenreStatus.DRAMA);
+        art.setGenreStatus(genreStatus);
+
+        for (Filmed filmed : filmedList) {
+            art.addFilmed(filmed);
+        }
 
         for (Actor actor : actors) {
             Participates participates = Participates.createParticipate(actor);
@@ -59,33 +63,15 @@ public class Art {
         return art;
     }
 
-    public static Art createArtMovie(String artName, Integer year, Filmed filmed, List<Actor> actors) {
-        Art art = new Art();
-        art.setName(artName);
-        art.setYear(year);
-        art.addFilmed(filmed);
-        art.setGenreStatus(GenreStatus.MOVIE);
-
-        for (Actor actor : actors) {
-            Participates participates = Participates.createParticipate(actor);
-            art.addParticipates(participates);
-        }
-
-        return art;
+    public static Art createArtMovie(String artName, Integer year, List<Filmed> filmedList, List<Actor> actors) {
+        return createArt(artName, year, filmedList, actors, GenreStatus.MOVIE);
     }
 
-    public static Art createArtBook(String artName, Integer year, Filmed filmed, List<Actor> actors) {
-        Art art = new Art();
-        art.setName(artName);
-        art.setYear(year);
-        art.addFilmed(filmed);
-        art.setGenreStatus(GenreStatus.BOOK);
+    public static Art createArtDrama(String artName, Integer year, List<Filmed> filmedList, List<Actor> actors) {
+        return createArt(artName, year, filmedList, actors, GenreStatus.DRAMA);
+    }
 
-        for (Actor actor : actors) {
-            Participates participates = Participates.createParticipate(actor);
-            art.addParticipates(participates);
-        }
-
-        return art;
+    public static Art createArtBook(String artName, Integer year, List<Filmed> filmedList, List<Actor> actors) {
+        return createArt(artName, year, filmedList, actors, GenreStatus.BOOK);
     }
 }

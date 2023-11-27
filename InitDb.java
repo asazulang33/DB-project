@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
@@ -47,35 +48,24 @@ public class InitDb {
             Location location3 = Location.createLoc("드라마 세트장", "서울시", "영등포구", "현대 백화점");
             em.persist(location3);
 
+            GenreStatus MOVIE = GenreStatus.MOVIE;
+            GenreStatus DRAMA = GenreStatus.DRAMA;
+            GenreStatus BOOK = GenreStatus.BOOK;
 
             // 작품 생성 및 저장
-            createMovie("입시", 2018, Arrays.asList(actor1, actor2), location1);
-            createMovie("영화", 2020, Arrays.asList(actor2, actor3), location2);
-            createDrama("라면", 2018, Arrays.asList(actor3), location1);
-            createDrama("꽃보다 남자", 2016, Arrays.asList(actor1, actor2, actor3), location3);
+            createArt("입시", 2018, DRAMA, Arrays.asList(actor1, actor2), Arrays.asList(location1, location2));
+            createArt("영화", 2020, DRAMA, Arrays.asList(actor2, actor3), Arrays.asList(location2));
+            createArt("라면", 2018, MOVIE, Arrays.asList(actor3), Arrays.asList(location1));
+            createArt("꽃보다 남자", 2016, DRAMA, Arrays.asList(actor1, actor2, actor3), Arrays.asList(location3));
         }
 
-        private void createMovie(String name, Integer year, List<Actor> actors, Location location) {
-            Filmed filmed = Filmed.createFilmed(location);
-            em.persist(filmed);
+        private void createArt(String name, Integer year, GenreStatus genreStatus, List<Actor> actors, List<Location> locations) {
+            List<Filmed> filmedList = locations.stream()
+                    .map(Filmed::createFilmed)
+                    .collect(Collectors.toList());
+            filmedList.forEach(em::persist);
 
-            Art art = Art.createArtMovie(name, year, filmed, actors);
-            em.persist(art);
-        }
-
-        private void createDrama(String name, Integer year, List<Actor> actors, Location location) {
-            Filmed filmed = Filmed.createFilmed(location);
-            em.persist(filmed);
-
-            Art art = Art.createArtDrama(name, year, filmed, actors);
-            em.persist(art);
-        }
-
-        private void createBook(String name, Integer year, List<Actor> actors, Location location) {
-            Filmed filmed = Filmed.createFilmed(location);
-            em.persist(filmed);
-
-            Art art = Art.createArtBook(name, year, filmed, actors);
+            Art art = Art.createArt(name, year, filmedList, actors, genreStatus);
             em.persist(art);
         }
 

@@ -30,89 +30,36 @@ public class ArtService {
     }
 
     @Transactional
-    public Long artDrama(String name, Integer year, List<Long> actorIds, Long locationId) {
-
+    public Long createArt(String name, Integer year, List<Long> actorIds, List<Long> locationIds, GenreStatus genreStatus) {
         List<Actor> actors = actorIds.stream()
                 .map(actorRepository::findOne)
                 .collect(Collectors.toList());
-        Location location = locationRepository.findOne(locationId);
-
-        Filmed filmed = new Filmed();
-        filmed.setLocation(location);
-
-        Art art = new Art();
-        art.setName(name);
-        art.setYear(year);
-        art.addFilmed(filmed);
-        art.setGenreStatus(GenreStatus.DRAMA);
-
-        for (Actor actor : actors) {
-            Participates participates = new Participates();
-            participates.setActor(actor);
-            participates.setArt(art);
-            // 다른 필요한 설정
-            art.addParticipates(participates);
-        }
-
-        artRepository.save(art);
-        return art.getId();
-    }
-    @Transactional
-    public Long artMovie(String name, Integer year, List<Long> actorIds, Long locationId) {
-
-        List<Actor> actors = actorIds.stream()
-                .map(actorRepository::findOne)
+        List<Location> locations = locationIds.stream()
+                .map(locationRepository::findOne)
                 .collect(Collectors.toList());
-        Location location = locationRepository.findOne(locationId);
 
-        Filmed filmed = new Filmed();
-        filmed.setLocation(location);
+        List<Filmed> filmedList = locations.stream()
+                .map(Filmed::createFilmed)
+                .collect(Collectors.toList());
 
-        Art art = new Art();
-        art.setName(name);
-        art.setYear(year);
-        art.addFilmed(filmed);
-        art.setGenreStatus(GenreStatus.MOVIE);
-
-        for (Actor actor : actors) {
-            Participates participates = new Participates();
-            participates.setActor(actor);
-            participates.setArt(art);
-            // 다른 필요한 설정
-            art.addParticipates(participates);
-        }
-
+        Art art = Art.createArt(name, year, filmedList, actors, genreStatus);
         artRepository.save(art);
         return art.getId();
     }
 
-    @Transactional
-    public Long artBook(String name, Integer year, List<Long> actorIds, Long locationId) {
+    // 예: 영화 생성
+    public Long artMovie(String name, Integer year, List<Long> actorIds, List<Long> locationIds) {
+        return createArt(name, year, actorIds, locationIds, GenreStatus.MOVIE);
+    }
 
-        List<Actor> actors = actorIds.stream()
-                .map(actorRepository::findOne)
-                .collect(Collectors.toList());
-        Location location = locationRepository.findOne(locationId);
+    // 예: 드라마 생성
+    public Long artDrama(String name, Integer year, List<Long> actorIds, List<Long> locationIds) {
+        return createArt(name, year, actorIds, locationIds, GenreStatus.DRAMA);
+    }
 
-        Filmed filmed = new Filmed();
-        filmed.setLocation(location);
-
-        Art art = new Art();
-        art.setName(name);
-        art.setYear(year);
-        art.addFilmed(filmed);
-        art.setGenreStatus(GenreStatus.BOOK);
-
-        for (Actor actor : actors) {
-            Participates participates = new Participates();
-            participates.setActor(actor);
-            participates.setArt(art);
-            // 다른 필요한 설정
-            art.addParticipates(participates);
-        }
-
-        artRepository.save(art);
-        return art.getId();
+    // 예: 책 생성
+    public Long artBook(String name, Integer year, List<Long> actorIds, List<Long> locationIds) {
+        return createArt(name, year, actorIds, locationIds, GenreStatus.BOOK);
     }
 
 
