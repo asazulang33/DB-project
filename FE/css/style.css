@@ -1,0 +1,238 @@
+@charset "utf-8";
+
+#page-wrapper {
+	display: flex;
+	flex-flow: column wrap;
+	height: 100vh;
+}
+#inner-wrapper {
+	display: flex;
+	flex-flow: column wrap;
+	height: 93%;
+}
+#left-panel {
+	background: #67bef8;
+	min-height: 100%;
+	order: -1;
+	width: 20%;
+	flex: 0 0 auto;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+}
+#footer, #content {
+	width: 80%;
+}
+#banner {
+	width: 100%;
+	background: #2980B9;
+	height: 7%;
+	display: flex;
+	flex-flow: row wrap;
+}
+#banner p {
+	flex: 1 1 auto;
+	margin-top: 0px;
+	margin-right: 20px;
+	font-family: 'Bagel Fat One';
+	font-size: 30px;
+	color: #fff;
+	display: flex;
+	justify-content: right;
+	align-items: center;
+	text-align: right;
+}
+#footer {
+	font-family: 'Nova Square';
+	margin-top: 0px;
+	background: #2980B9;
+	height: 25px;
+	text-align: right;
+}
+#content {
+	background: #fff;
+	flex: 1 1 auto;
+}
+#navigation, #select-content, #page-control {
+	width: 93%;
+}
+#page-control {
+	height: 25px;
+	text-align: center;
+}
+#navigation{
+	margin-top: 10px;
+	display: flex;
+	flex-flow: column wrap;
+	height: 35px;
+	background: #3498db;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+#select-content {
+	height: 87%;
+}
+#nav-box {
+	width: 30%;
+	height: 100%;
+	background: #2980B9;
+	position: relative;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	color: #FFF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-wrap: wrap;
+}
+#search-area {
+	width: 20%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-family: 'Gugi';
+	font-size: 1vw;
+	flex-wrap: wrap;
+}
+#search-box {
+	width: 37%;
+	height: 100%;
+	background: #67bef8;
+	position: relative;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	color: #FFF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-wrap: wrap;
+}
+#content-box-1 {
+	height: 22%;
+	width: calc(100%-4px);
+	background: #DDD;
+	position: relative;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border: 4px solid #67bef8;
+	flex-wrap: wrap;
+	word-break: break-all;
+	transition: left .5s;
+	left: -600px;
+}
+#content-box-2 {
+	height: 22%;
+	width: calc(100%-4px);
+	background: #DDD;
+	position: relative;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border: 4px solid #67bef8;
+	flex-wrap: wrap;
+	word-break: break-all;
+	transition: left .5s;
+	left: -600px;
+}
+#content-box-3 {
+	height: 22%;
+	width: calc(100%-4px);
+	background: #DDD;
+	position: relative;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border: 4px solid #67bef8;
+	flex-wrap: wrap;
+	word-break: break-all;
+	transition: left .5s;
+	left: -600px;
+}
+#content-box-4 {
+	height: 22%;
+	width: calc(100%-4px);
+	background: #DDD;
+	position: relative;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border: 4px solid #67bef8;
+	flex-wrap: wrap;
+	word-break: break-all;
+	transition: left .5s;
+	left: -600px;
+}
+
+.slider {
+   border: none;
+   background-color: white;
+   height: 3px;
+   width: 45px;
+   margin-top: 10px;
+   border-radius:15px;
+}
+
+#slideButton {
+  border: 0;
+  margin-top: 12px;
+  margin-left: 15px;
+  padding-right: 7px;
+  padding-top: 7px;
+  position: fixed;
+  border-radius: 5px;
+  padding-left: 18px;
+}
+
+#slideButton:focus {
+   outline: none;
+}
+
+#slideButton:hover {
+   background-color: rgba(100,100,100,0.1);
+   transition: ease 0.6s;
+}
+
+.pagination {
+	display: inline-block;
+}
+.pagination a {
+	color: black;
+	float: left;
+	padding: 4px 8px;
+	text-decoration: none;
+}
+.pagination a.active {
+	background-color: #2980B9;
+	color: white;
+	border-radius: 5px;
+}
+.pagination a:hover:not(.active) {
+	background-color: #3498db;
+	border-radius: 5px;
+}
+
+body { margin: 0; }

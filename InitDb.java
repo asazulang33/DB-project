@@ -45,11 +45,11 @@ public class InitDb {
             em.persist(actor3);
 
             // 장소 생성 및 저장
-            Location location1 = Location.createLoc("학교", "수원시", "권선구", "금곡동 홈플러스");
+            Location location1 = Location.createLoc("학교", "경기도 수원시", "권선구", "서수원로589");
             em.persist(location1);
-            Location location2 = Location.createLoc("영화관", "수원시", "권선구", "금곡동 롯데시네마");
+            Location location2 = Location.createLoc("영화관", "경기도 남양주시", "조안면", "능내리 50");
             em.persist(location2);
-            Location location3 = Location.createLoc("드라마 세트장", "서울시", "영등포구", "현대 백화점");
+            Location location3 = Location.createLoc("드라마 세트장", "경기 남양주시", "별내면", "청학로68번길 40");
             em.persist(location3);
 
             // 작품 생성 및 저장
