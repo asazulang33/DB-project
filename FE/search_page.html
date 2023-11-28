@@ -21,7 +21,7 @@
 	#inner-wrapper {
 		display: flex;
 		flex-flow: column wrap;
-		height: 95vh;
+		height: 93vh;
 	}
 	#left-panel {
 		background: #67bef8;
@@ -39,15 +39,21 @@
 	#banner {
 		width: 100%;
 		background: #2980B9;
-		height: 5vh;
+		height: 7vh;
+		display: flex;
+		flex-flow: row wrap;
 	}
-	#banner h1 {
+	#banner p {
+		flex: 1 1 auto;
 		margin-top: 0px;
 		margin-right: 20px;
-		text-align: right;
 		font-family: 'Bagel Fat One';
 		font-size: 30px;
 		color: #fff;
+		display: flex;
+		justify-content: right;
+		align-items: center;
+		text-align: right;
 	}
 	#footer {
 		font-family: 'Nova Square';
@@ -94,8 +100,32 @@
 		align-items: center;
 		text-align: center;
 	}
+	#search-area {
+		width: 20%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		font-family: 'Gugi';
+		font-size: 18px;
+	}
+	#search-box {
+		width: 37%;
+		height: 100%;
+		background: #67bef8;
+		position: relative;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+		color: #FFF;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
 	#content-box {
-		height: 5%;
+		height: 20%;
 		width: calc(100%-4px);
 		background: #DDD;
 		position: relative;
@@ -136,21 +166,84 @@
 <body>
 	<div id="page-wrapper">
 		<div id="banner">
-			<h1>여기 가봤어?</h1>
+			<div id="search-area" >
+			<form action="/" method="get">
+				<div class="form-group">
+					<label for="genre">장르 선택</label>
+					<select name="genreStatus" id="genre" class="form-control" style="font-family: 'Gugi';">
+						<option value="" style="font-family: 'Gugi';">모든 장르</option>
+						<option value="MOVIE" style="font-family: 'Gugi';">영화</option>
+						<option value="DRAMA" style="font-family: 'Gugi';">드라마</option>
+						<option value="BOOK" style="font-family: 'Gugi';">책</option>
+						<option value="ANIMA" style="font-family: 'Gugi';">애니메이션</option>
+						<option value="MUSIC" style="font-family: 'Gugi';">뮤직비디오</option>
+					</select>
+					<button type="submit" class="btn btn-primary" style="font-family: 'Gugi';">검색</button>
+				</div>
+				<div class="form-group">
+					<label for="artName">작품명</label>
+					<input type="text" id="artName" name="artName" class="form-control" placeholder="작품명을 입력하세요" th:value="${artSearch.artName}" style="font-family: 'Gugi';">
+				</div>
+			</form>
+			</div>
+			<p>여기 가봤어?</p>
 		</div>
 		<div id="inner-wrapper">
 			<div id="left-panel">
 				<div id="navigation">
-					<div id="nav-box" style="font-family: 'Nova Square';">Home</div>
+					<div id="nav-box" style="font-family: 'Nova Square';">navigation</div>
 					<br/>
-					<div id="nav-box" style="font-family: 'Gugi'; background: #3498db; width: 70%;"></div>
+					<div id="nav-box" style="font-family: 'Gugi'; background: #3498db; width: 70%;">책</div>
 				</div>
 				<div id="select-content">
-					<div id="content-box" style="font-family: 'Gugi';">영화</div>
-					<div id="content-box" style="font-family: 'Gugi';">드라마</div>
-					<div id="content-box" style="font-family: 'Gugi';">책</div>
-					<div id="content-box" style="font-family: 'Gugi';">애니메이션</div>
-					<div id="content-box" style="font-family: 'Gugi';">뮤직비디오</div>
+					<div id="content-box" style="font-family: 'Nova Square';">
+					<table class="table">
+						<thead>
+						<tr>
+							<th>Art ID</th>
+							<th>Art Name</th>
+							<th>Genre</th>
+							<th>Filmed Locations</th>
+							<th>Actors</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr th:each="art : ${arts}">
+							<td th:text="${art.id}"></td>
+							<td th:text="${art.name}"></td>
+							<td th:text="${art.genreStatus}"></td>
+							<td>
+								<ul>
+									<li th:each="filmed : ${art.filmedList}"
+										th:text="${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}">
+									</li>
+								</ul>
+							</td>
+					  <td>
+						<ul>
+						  <li th:each="participate : ${art.participates}"
+							  th:text="${participate.actorName}">
+						  </li>
+						</ul>
+					  </td>
+					</tr>
+					</tbody>
+				  </table>
+					</div>
+					<div id="content-box" style="font-family: 'Nova Square';">B</div>
+					<div id="content-box" style="font-family: 'Nova Square';">C</div>
+				</div>
+				<div id="page-control">
+				<div class="pagination">
+					<a href="#">&laquo;</a>
+					<a href="#">1</a>
+					<a href="#">2</a>
+					<a href="#" class="active">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+					<a href="#">6</a>
+					<a href="#">&raquo;</a>
+				</div>
 				</div>
 			</div>
 			<div id="content">map</div>
