@@ -10,19 +10,31 @@ function handleOnChange(e) {
 }
 
 function toggleMenu(){
-	if(document.getElementById("content-box-1").style.left == "-630px") {
+	if(document.getElementById("content-box-1").style.left == "0px") {
+		
+	}
+	else {
 		document.getElementById("content-box-1").style.left = "0px"
 	}
 	setTimeout(function(){
-		if(document.getElementById("content-box-2").style.left == "-630px") {
+		if(document.getElementById("content-box-2").style.left == "0px") {
+			
+		}
+		else {
 			document.getElementById("content-box-2").style.left = "0px"
 		}
 		setTimeout(function(){
-			if(document.getElementById("content-box-3").style.left == "-630px") {
+			if(document.getElementById("content-box-3").style.left == "0px") {
+				
+			}
+			else {
 				document.getElementById("content-box-3").style.left = "0px"
 			}
 			setTimeout(function(){
-				if(document.getElementById("content-box-4").style.left == "-630px") {
+				if(document.getElementById("content-box-4").style.left == "0px") {
+					
+				}
+				else {
 					document.getElementById("content-box-4").style.left = "0px"
 				}
 			}, 100);
