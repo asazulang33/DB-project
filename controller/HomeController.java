@@ -1,6 +1,5 @@
 package jpaDB.mapping.controller;
 
-import jpaDB.mapping.domain.Actor;
 import jpaDB.mapping.domain.Art;
 import jpaDB.mapping.repository.ArtSearch;
 import jpaDB.mapping.service.ArtService;
@@ -21,9 +20,17 @@ public class HomeController {
     private final ArtService artService;
 
     @RequestMapping("/")
-    public String home(@ModelAttribute("artSearch") ArtSearch artSearch, Model model) {
+    public String home(@ModelAttribute("artSearch") ArtSearch artSearch,
+                       Model model) {
         List<Art> arts = artService.findArts(artSearch);
         model.addAttribute("arts", arts);
-        return "/home";
+
+//        int pageSize = 4;
+//        Pageable pageable = PageRequest.of(page, pageSize);
+//        Page<Art> artPage = artService.findPaginatedArt(pageable);
+//        model.addAttribute("artPage", artPage);
+
+
+        return "/main";
     }
 }
