@@ -99,7 +99,51 @@
 				</div>
 				</div>
 			</div>
-			<div id="content">map</div>
+			<div id="map" style="width:80%; height:97%;"></div>
+
+			<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bfb844e4012fd7dbcdd58e92d352d224&libraries=services"></script>
+			<script th:inline="javascript">
+			  /*<![CDATA[*/
+			  var mapContainer = document.getElementById('map'),
+				  mapOption = {
+					  center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+					  level: 9 // 지도의 확대 레벨
+				  };
+			  var map = new kakao.maps.Map(mapContainer, mapOption);
+			  var geocoder = new kakao.maps.services.Geocoder();
+			  var bounds = new kakao.maps.LatLngBounds();
+
+			  var positions = [];
+
+			  /*[# th:each="art : ${arts}"]*/
+				/*[# th:each="filmed : ${art.filmedList}"]*/
+				  positions.push({
+					title: [[${art.name}]],
+					address: [[${filmed.location.CTPRVN_NM}]] + " " +
+							 [[${filmed.location.SIGNGU_NM}]] + " " +
+							 [[${filmed.location.Specific_Addr_NM}]]
+				  });
+				/*[/]*/
+			  /*[/]*/
+
+			  positions.forEach(function(position) {
+				geocoder.addressSearch(position.address, function(result, status) {
+				  if (status === kakao.maps.services.Status.OK) {
+					var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+					var marker = new kakao.maps.Marker({
+					  map: map,
+					  position: coords
+					});
+
+					var infowindow = new kakao.maps.InfoWindow({
+					  content: '<div style="width:100px;text-align:center;padding:6px 0;">' + position.title + '</div>'
+					});
+					infowindow.open(map, marker);
+				  }
+				});
+			  });
+			  /*]]>*/
+			</script>
 			<div id="footer">Ajou University 2023-1 Database Final project&nbsp;&nbsp;&nbsp;</div>
 		</div>
 	</div>
