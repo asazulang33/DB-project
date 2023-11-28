@@ -9,163 +9,95 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 <title>성지 순례 위치 탐색</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Gugi&family=Nova+Square&display=swap" rel="stylesheet">
 <style>
-	#page-wrapper {
-		display: flex;
-		flex-flow: column wrap;
-		height: 100vh;
-	}
-	#inner-wrapper {
-		display: flex;
-		flex-flow: column wrap;
-		height: 95vh;
-	}
-	#left-panel {
-		background: #67bef8;
-		min-height: 100%;
-		order: -1;
-		width: 20%;
-		flex: 0 0 auto;
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: space-evenly;
-	}
-	#footer, #content {
-		width: 80%;
-	}
-	#banner {
-		width: 100%;
-		background: #2980B9;
-		height: 5vh;
-	}
-	#banner h1 {
-		margin-top: 0px;
-		margin-right: 20px;
-		text-align: right;
-		font-family: 'Bagel Fat One';
-		font-size: 30px;
-		color: #fff;
-	}
-	#footer {
-		font-family: 'Nova Square';
-		margin-top: 0px;
-		background: #2980B9;
-		height: 25px;
-		text-align: right;
-	}
-	#content {
-		background: #fff;
-		flex: 1 1 auto;
-	}
-	#navigation, #select-content, #page-control {
-		width: 93%;
-	}
-	#page-control {
-		height: 25px;
-		text-align: center;
-	}
-	#navigation{
-		margin-top: 10px;
-		display: flex;
-		flex-flow: column wrap;
-		height: 35px;
-		background: #3498db;
-		-moz-border-radius: 10px;
-		-webkit-border-radius: 10px;
-		border-radius: 10px;
-	}
-	#select-content {
-		height: 90%;
-	}
-	#nav-box {
-		width: 30%;
-		height: 100%;
-		background: #2980B9;
-		position: relative;
-		-moz-border-radius: 10px;
-		-webkit-border-radius: 10px;
-		border-radius: 10px;
-		color: #FFF;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-	}
-	#content-box {
-		height: 5%;
-		width: calc(100%-4px);
-		background: #DDD;
-		position: relative;
-		-moz-border-radius: 10px;
-		-webkit-border-radius: 10px;
-		border-radius: 10px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		border: 4px solid #67bef8;
-	}
-	#nav-box {
-		width: 30%;
-		height: 100%;
-		background: #2980B9;
-		position: relative;
-		-moz-border-radius: 10px;
-		-webkit-border-radius: 10px;
-		border-radius: 10px;
-		color: #FFF;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-	}
-	.pagination {
-		display: inline-block;
-	}
-	.pagination a {
-		color: black;
-		float: left;
-		padding: 4px 8px;
-		text-decoration: none;
-	}
-	.pagination a.active {
-		background-color: #2980B9;
-		color: white;
-		border-radius: 5px;
-	}
-	.pagination a:hover:not(.active) {
-		background-color: #3498db;
-		border-radius: 5px;
-	}
-
-	body { margin: 0; }
+	@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Gugi&family=Nova+Square&display=swap');
 </style>
+<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/interactive.js"></script>
 
-<!-- <script type="text/javascript" src="assignment3.js"></script> -->
 </head>
 
 <body>
 	<div id="page-wrapper">
 		<div id="banner">
-			<h1>여기 가봤어?</h1>
+			<div id="search-area" >
+			<form action="/" method="get">
+				<div class="form-group">
+					<label for="genre">장르 선택</label>
+					<select name="genreStatus" id="genre" class="form-control" style="font-family: 'Gugi';" onchange="handleOnChange(this)">
+						<option value="" style="font-family: 'Gugi';">모든 장르</option>
+						<option value="MOVIE" style="font-family: 'Gugi';">영화</option>
+						<option value="DRAMA" style="font-family: 'Gugi';">드라마</option>
+						<option value="BOOK" style="font-family: 'Gugi';">책</option>
+						<option value="ANIMA" style="font-family: 'Gugi';">애니메이션</option>
+						<option value="MUSIC" style="font-family: 'Gugi';">뮤직비디오</option>
+					</select>
+					<button type="submit" class="btn btn-primary" style="font-family: 'Gugi';" onClick="toggleMenu()">검색</button>
+				</div>
+				<div class="form-group">
+					<label for="artName">작품명</label>
+					<input type="text" id="artName" name="artName" class="form-control" placeholder="작품명을 입력하세요" th:value="${artSearch.artName}" style="font-family: 'Gugi';">
+				</div>
+			</form>
+			</div>
+			<p>여기 가봤어?</p>
 		</div>
 		<div id="inner-wrapper">
 			<div id="left-panel">
 				<div id="navigation">
-					<div id="nav-box" style="font-family: 'Nova Square';">Home</div>
+					<div id="nav-box"><div id='result' style="font-family: 'Gugi';">홈</div></div>
 					<br/>
-					<div id="nav-box" style="font-family: 'Gugi'; background: #3498db; width: 70%;"></div>
+					<div id="nav-box" style="font-family: 'Gugi'; background: #3498db; width: 70%;">Art Name</div>
 				</div>
+				<!-- <button id="slideButton" onClick="toggleMenu()">test</button> -->
 				<div id="select-content">
-					<div id="content-box" style="font-family: 'Gugi';">영화</div>
-					<div id="content-box" style="font-family: 'Gugi';">드라마</div>
-					<div id="content-box" style="font-family: 'Gugi';">책</div>
-					<div id="content-box" style="font-family: 'Gugi';">애니메이션</div>
-					<div id="content-box" style="font-family: 'Gugi';">뮤직비디오</div>
-					<div id="content-box" style="font-family: 'Gugi';">기타</div>
+					<div id="content-box-1" style="font-family: 'Nova Square';">
+					<table class="table">
+						<tbody>
+						<tr th:each="art : ${arts}">
+							<td th:text="${art.genreStatus}"></td>
+							<td th:text="${art.name}"></td>
+						</tr>
+						</tbody>
+					</table>
+					</div>
+					<div id="content-box-2" style="font-family: 'Nova Square';">
+						<tbody>
+						<tr th:each="art : ${arts}">
+							<td th:text="${art.genreStatus}"></td>
+							<td th:text="${art.name}"></td>
+						</tr>
+						</tbody>
+					</table>
+					</div>
+					<div id="content-box-3" style="font-family: 'Nova Square';">
+						<tbody>
+						<tr th:each="art : ${arts}">
+							<td th:text="${art.genreStatus}"></td>
+							<td th:text="${art.name}"></td>
+						</tr>
+						</tbody>
+					</table>
+					</div>
+					<div id="content-box-4" style="font-family: 'Nova Square';">
+						<tbody>
+						<tr th:each="art : ${arts}">
+							<td th:text="${art.genreStatus}"></td>
+							<td th:text="${art.name}"></td>
+						</tr>
+						</tbody>
+					</table>
+					</div>
+					
+				</div>
+				<div id="page-control">
+				<div class="pagination">
+					<a href="#">&laquo;</a>
+					<a href="#">1</a>
+					<a href="#">2</a>
+					<a href="#" class="active">3</a>
+					<a href="#">&raquo;</a>
+				</div>
 				</div>
 			</div>
 			<div id="content">map</div>
