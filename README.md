@@ -17,6 +17,9 @@
 
 * 11.28일자 작품명 검색, 장르별 검색 기능 추가
 
-* ![image](https://github.com/asazulang33/DB-project/assets/88483964/30661650-64eb-4ee8-94ac-38cb5831fd7f)
+![image](https://github.com/asazulang33/DB-project/assets/88483964/30661650-64eb-4ee8-94ac-38cb5831fd7f)
+
+![image](https://github.com/asazulang33/DB-project/assets/88483964/1fbd0fb6-9b7a-4661-bcf8-feecc525a509)
+*11.28일자 지도 추가
 
 이와 같이 InitDB.java에 값을 입력하면 DB에 저장되고 html 화면 출력
