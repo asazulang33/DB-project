@@ -73,7 +73,7 @@
 #select-content {
 	height: 87%;
 }
-#nav-box {
+#nav-box-1 {
 	width: 30%;
 	height: 100%;
 	background: #2980B9;
@@ -87,6 +87,24 @@
 	align-items: center;
 	text-align: center;
 	flex-wrap: wrap;
+}
+#nav-box-2 {
+	width: 30%;
+	height: 100%;
+	background: #2980B9;
+	position: relative;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	color: #FFF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-wrap: wrap;
+	font-family: 'Gugi';
+	background: #3498db;
+	width: 70%;
 }
 #search-area {
 	width: 20%;
