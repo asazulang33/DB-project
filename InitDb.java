@@ -29,6 +29,10 @@ public class InitDb {
 
         private final EntityManager em;
 
+        GenreStatus MOVIE = GenreStatus.MOVIE;
+        GenreStatus DRAMA = GenreStatus.DRAMA;
+        GenreStatus BOOK = GenreStatus.BOOK;
+
         public void dbInit() {
             System.out.println("Init" + this.getClass());
 
@@ -48,10 +52,6 @@ public class InitDb {
             Location location3 = Location.createLoc("드라마 세트장", "서울시", "영등포구", "현대 백화점");
             em.persist(location3);
 
-            GenreStatus MOVIE = GenreStatus.MOVIE;
-            GenreStatus DRAMA = GenreStatus.DRAMA;
-            GenreStatus BOOK = GenreStatus.BOOK;
-
             // 작품 생성 및 저장
             createArt("입시", 2018, DRAMA, Arrays.asList(actor1, actor2), Arrays.asList(location1, location2));
             createArt("영화", 2020, DRAMA, Arrays.asList(actor2, actor3), Arrays.asList(location2));
@@ -59,6 +59,8 @@ public class InitDb {
             createArt("꽃보다 남자", 2016, DRAMA, Arrays.asList(actor1, actor2, actor3), Arrays.asList(location3));
         }
 
+
+        // 작품생성 : 작품명, 연도, 장르, 배우들, 촬영장소들
         private void createArt(String name, Integer year, GenreStatus genreStatus, List<Actor> actors, List<Location> locations) {
             List<Filmed> filmedList = locations.stream()
                     .map(Filmed::createFilmed)

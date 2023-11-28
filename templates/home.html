@@ -3,18 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title>Art Gallery</title>
-  <!-- 스타일시트 및 기타 헤더 정보 -->
 </head>
 <body>
 <div class="container">
 
   <h2>Art List</h2>
 
+  <form action="/" method="get">
+    <div class="form-group">
+      <label for="genre">장르 선택</label>
+      <select name="genreStatus" id="genre" class="form-control">
+        <option value="">모든 장르</option>
+        <option value="MOVIE">영화</option>
+        <option value="DRAMA">드라마</option>
+        <option value="BOOK">책</option>
+      </select>
+      <button type="submit" class="btn btn-primary">검색</button>
+    </div>
+    <div class="form-group">
+      <label for="artName">작품명</label>
+      <input type="text" id="artName" name="artName" class="form-control" placeholder="작품명을 입력하세요" th:value="${artSearch.artName}">
+    </div>
+  </form>
+
   <table class="table">
     <thead>
     <tr>
       <th>Art ID</th>
       <th>Art Name</th>
+      <th>Genre</th>
       <th>Filmed Locations</th>
       <th>Actors</th>
     </tr>
@@ -23,6 +40,7 @@
     <tr th:each="art : ${arts}">
       <td th:text="${art.id}"></td>
       <td th:text="${art.name}"></td>
+      <td th:text="${art.genreStatus}"></td>
       <td>
         <ul>
           <li th:each="filmed : ${art.filmedList}"

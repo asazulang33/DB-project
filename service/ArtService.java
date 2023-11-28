@@ -25,10 +25,12 @@ public class ArtService {
         return artRepository.findAllArts();
     }
 
+    // 작품명, 장르로 찾는 로직
     public List<Art> findArts(ArtSearch artSearch) {
         return artRepository.findAll(artSearch);
     }
 
+    // 작품 생성로직
     @Transactional
     public Long createArt(String name, Integer year, List<Long> actorIds, List<Long> locationIds, GenreStatus genreStatus) {
         List<Actor> actors = actorIds.stream()
@@ -47,17 +49,17 @@ public class ArtService {
         return art.getId();
     }
 
-    // 예: 영화 생성
+    // 영화 생성
     public Long artMovie(String name, Integer year, List<Long> actorIds, List<Long> locationIds) {
         return createArt(name, year, actorIds, locationIds, GenreStatus.MOVIE);
     }
 
-    // 예: 드라마 생성
+    // 드라마 생성
     public Long artDrama(String name, Integer year, List<Long> actorIds, List<Long> locationIds) {
         return createArt(name, year, actorIds, locationIds, GenreStatus.DRAMA);
     }
 
-    // 예: 책 생성
+    // 책 생성
     public Long artBook(String name, Integer year, List<Long> actorIds, List<Long> locationIds) {
         return createArt(name, year, actorIds, locationIds, GenreStatus.BOOK);
     }

@@ -21,8 +21,8 @@ public class HomeController {
     private final ArtService artService;
 
     @RequestMapping("/")
-    public String home(Model model) {
-        List<Art> arts = artService.findAllArts();
+    public String home(@ModelAttribute("artSearch") ArtSearch artSearch, Model model) {
+        List<Art> arts = artService.findArts(artSearch);
         model.addAttribute("arts", arts);
         return "/home";
     }
