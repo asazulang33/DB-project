@@ -1,5 +1,7 @@
 package jpaDB.mapping.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jpaDB.mapping.domain.*;
 import jpaDB.mapping.repository.ActorRepository;
 import jpaDB.mapping.repository.ArtRepository;
@@ -9,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -63,6 +66,5 @@ public class ArtService {
     public Long artBook(String name, Integer year, List<Long> actorIds, List<Long> locationIds) {
         return createArt(name, year, actorIds, locationIds, GenreStatus.BOOK);
     }
-
 
 }

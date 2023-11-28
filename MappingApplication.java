@@ -8,6 +8,9 @@ public class MappingApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MappingApplication.class, args);
+
 	}
+
+
 
 }
