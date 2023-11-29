@@ -67,5 +67,18 @@ public class ArtService {
     public Long artBook(String name, Integer year, List<Long> actorIds, List<Long> locationIds) {
         return createArt(name, year, actorIds, locationIds, GenreStatus.BOOK);
     }
+    // 책 생성
+    public Long artAnimation(String name, Integer year, List<Long> actorIds, List<Long> locationIds) {
+        return createArt(name, year, actorIds, locationIds, GenreStatus.ANIMATION);
+    }
+    // 책 생성
+    public Long artMV(String name, Integer year, List<Long> actorIds, List<Long> locationIds) {
+        return createArt(name, year, actorIds, locationIds, GenreStatus.MUSIC);
+    }
+
+    // 페이징 처리를 위한 메소드 추가
+    public Page<Art> findArts(Pageable pageable) {
+        return artRepository.findAll(pageable);
+    }
 
 }

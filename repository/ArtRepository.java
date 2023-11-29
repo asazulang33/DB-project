@@ -3,12 +3,13 @@ package jpaDB.mapping.repository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
-import jakarta.persistence.criteria.*;
 import jpaDB.mapping.domain.Art;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -72,5 +73,16 @@ public class ArtRepository {
         }
 
         return query.getResultList();
+    }
+
+    // 페이징 처리를 위한 메소드 추가
+    public Page<Art> findAll(Pageable pageable) {
+        TypedQuery<Art> query = em.createQuery("select a from Art a", Art.class);
+        int totalRows = query.getResultList().size();
+        List<Art> results = query.setFirstResult((int) pageable.getOffset())
+                .setMaxResults(pageable.getPageSize())
+                .getResultList();
+
+        return new PageImpl<>(results, pageable, totalRows);
     }
 }

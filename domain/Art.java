@@ -75,4 +75,12 @@ public class Art {
     public static Art createArtBook(String artName, Integer year, List<Filmed> filmedList, List<Actor> actors) {
         return createArt(artName, year, filmedList, actors, GenreStatus.BOOK);
     }
+
+    public static Art createArtAnimation(String artName, Integer year, List<Filmed> filmedList, List<Actor> actors) {
+        return createArt(artName, year, filmedList, actors, GenreStatus.ANIMATION);
+    }
+
+    public static Art createArtMusic(String artName, Integer year, List<Filmed> filmedList, List<Actor> actors) {
+        return createArt(artName, year, filmedList, actors, GenreStatus.MUSIC);
+    }
 }

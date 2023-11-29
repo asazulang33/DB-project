@@ -32,6 +32,8 @@ public class InitDb {
         GenreStatus MOVIE = GenreStatus.MOVIE;
         GenreStatus DRAMA = GenreStatus.DRAMA;
         GenreStatus BOOK = GenreStatus.BOOK;
+        GenreStatus ANIMATION = GenreStatus.ANIMATION;
+        GenreStatus MUSIC = GenreStatus.MUSIC;
 
         public void dbInit() {
             System.out.println("Init" + this.getClass());
@@ -88,6 +90,8 @@ public class InitDb {
             Actor actor25 = createActor("정호연", "여자");
             em.persist(actor25);
 
+
+
             // 장소 생성 및 저장
             // 이하 기생충
             Location location1 = Location.createLoc("스카이피자(피자시대)", "서울시", "동작구", "노량진로6길 86");
@@ -117,6 +121,9 @@ public class InitDb {
             em.persist(location11);
             Location location12 = Location.createLoc("휴먼(붕어빵집)", "서울특별시", "도봉구", "노해로70길 81");
             em.persist(location12);
+            //임의 데이터
+            Location location13 = Location.createLoc("아주대학교", "경기도 수원시", "영통구", "월드컵로 206");
+            em.persist(location13);
 
 
             // 작품 생성 및 저장
@@ -130,6 +137,7 @@ public class InitDb {
                     Arrays.asList(location8, location9));
             createArt("오징어 게임", 2020, DRAMA, Arrays.asList(actor11, actor22, actor23, actor24, actor25),
                     Arrays.asList(location10, location11, location12));
+            createArt("지옥의 과제", 2023, ANIMATION, Arrays.asList(actor25), Arrays.asList(location13));
         }
 
 
