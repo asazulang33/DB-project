@@ -1857,7 +1857,7 @@ pre code {
 .form-control {
   display: block;
   width: 100%;
-  height: calc(1.5em + 0.75rem + 2px);
+  height: calc(0.75rem + 2px);
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
@@ -2328,8 +2328,8 @@ textarea.form-control {
     display: flex;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
     -ms-flex-align: center;
     align-items: center;
     margin-bottom: 0;

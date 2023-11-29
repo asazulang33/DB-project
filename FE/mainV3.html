@@ -23,10 +23,10 @@
 	<div id="page-wrapper">
 		<div id="banner">
 			<div id="search-area" >
-			<form action="/" method="get">
-				<div class="form-group">
-					<label for="genre">장르 선택</label>
-					<select name="genreStatus" id="genre" class="form-control" style="font-family: 'Gugi';" onchange="handleOnChange(this)">
+			<form action="/" method="get" style="display: flex; flex-flow: column nowrap; width: 100%; align-items: center;">
+				<div class="form-group" style="display: flex; flex-flow: row nowrap;">
+					<label for="genre" style="font-family: 'Gugi'; font-size: 0.9vw; height: 30%; width: 110%; justify-content: center;">장르 선택</label>
+					<select name="genreStatus" id="genre" class="form-control" style="font-family: 'Gugi'; font-size: 0.7vw; height: 20%; flex: 1 1 auto;" onchange="handleOnChange(this)">
 						<option value="" style="font-family: 'Gugi';">모든 장르</option>
 						<option value="MOVIE" style="font-family: 'Gugi';">영화</option>
 						<option value="DRAMA" style="font-family: 'Gugi';">드라마</option>
@@ -34,11 +34,11 @@
 						<option value="ANIMA" style="font-family: 'Gugi';">애니메이션</option>
 						<option value="MUSIC" style="font-family: 'Gugi';">뮤직비디오</option>
 					</select>
-					<button type="submit" class="btn btn-primary" style="font-family: 'Gugi';" onClick="toggleMenu()">검색</button>
+					<button onClick="toggleMenu()" type="submit" class="btn btn-primary" style="font-family: 'Gugi'; font-size: 0.7vw; width: 50%;">검색</button>
 				</div>
-				<div class="form-group">
-					<label for="artName">작품명</label>
-					<input type="text" id="artName" name="artName" class="form-control" placeholder="작품명을 입력하세요" th:value="${artSearch.artName}" style="font-family: 'Gugi';">
+				<div class="form-group" style="display: flex; flex-flow: row nowrap; justify-content: flex-start;">
+					<label for="artName" style="font-size: 0.9vw; height: 30%; width: 50% ">작품명</label>
+					<input type="text" id="artName" name="artName" class="form-control" placeholder="작품명을 입력하세요" th:value="${artSearch.artName}" style="font-family: 'Gugi'; font-size: 0.7vw; height: 30%; flex: 1 1 auto;"></input>
 				</div>
 			</form>
 			</div>
@@ -98,7 +98,7 @@
 				</div>
 				<!-- 페이징처리 시작 -->
 				<div th:if="${!paging.isEmpty()}" >
-					<ul class="pagination justify-content-center">
+					<ul class="pagination">
 						<!-- 이전 페이지로 이동 및 첫 페이지 처리-->
 						<li class="page-item" th:classappend="${!paging.hasPrevious} ? 'disabled'">
 							<a class="page-link" th:href="@{|?page=${paging.number-1}|}" th:unless="${!paging.hasPrevious}"><</a>
