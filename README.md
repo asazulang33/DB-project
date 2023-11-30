@@ -27,3 +27,5 @@
 *11.29일자 디자인 및 반응형 웹 작업 완료
 ![image](https://github.com/asazulang33/DB-project/assets/128798027/f55dd280-5c50-4561-b44d-6786eb193f15)
 
+*11.30일자 지도에 작품 정보 표시
+![KakaoTalk_20231130_164728953](https://github.com/asazulang33/DB-project/assets/88483964/098d89bb-4322-410f-8c63-d2d0c8795128)
