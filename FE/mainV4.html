@@ -31,7 +31,7 @@
 						<option value="MOVIE" style="font-family: 'Gugi';">영화</option>
 						<option value="DRAMA" style="font-family: 'Gugi';">드라마</option>
 						<option value="BOOK" style="font-family: 'Gugi';">책</option>
-						<option value="ANIMA" style="font-family: 'Gugi';">애니메이션</option>
+						<option value="ANIMATION" style="font-family: 'Gugi';">애니메이션</option>
 						<option value="MUSIC" style="font-family: 'Gugi';">뮤직비디오</option>
 					</select>
 					<button type="submit" class="btn btn-primary" style="font-family: 'Gugi'; font-size: 0.5vw; width: 50%;">검색</button>
@@ -53,49 +53,50 @@
 
 				<!-- 컨텐츠 4개씩 표시 -->
 				<div id="select-content">
-					<div th:each="art, iterStat : ${filteredArts}">
+					<div th:each="art, iterStat : ${paging.content}">
 						<div th:if="${iterStat.index == 0}" id="content-box-1">
 							<tr>
 								<td th:text="${art.genreStatus}" onchange="toggleMenu()"></td>
 								<td th:text="${art.name}"></td>
-								<li th:each="filmed : ${art.filmedList}"
-									th:text="${filmed.location.Loc_name} + ':' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"></li>
-								<li th:each="participate : ${art.participates}"
-									th:text="${participate.actorName}"></li>
+								<td th:each="filmed : ${art.filmedList}"
+									th:text="${filmed.location.Loc_name} + ':' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"></td>
+								<td th:each="participate : ${art.participates}"
+									th:text="${participate.actorName}"></td>
 							</tr>
 						</div>
 						<div th:if="${iterStat.index == 1}" id="content-box-2">
 							<tr>
 								<td th:text="${art.genreStatus}" onchange="toggleMenu()"></td>
 								<td th:text="${art.name}"></td>
-								<li th:each="filmed : ${art.filmedList}"
-									th:text="${filmed.location.Loc_name} + ':' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"></li>
-								<li th:each="participate : ${art.participates}"
-									th:text="${participate.actorName}"></li>
+								<td th:each="filmed : ${art.filmedList}"
+									th:text="${filmed.location.Loc_name} + ':' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"></td>
+								<td th:each="participate : ${art.participates}"
+									th:text="${participate.actorName}"></td>
 							</tr>
 						</div>
 						<div th:if="${iterStat.index == 2}" id="content-box-3">
 							<tr>
 								<td th:text="${art.genreStatus}" onchange="toggleMenu()"></td>
 								<td th:text="${art.name}"></td>
-								<li th:each="filmed : ${art.filmedList}"
-									th:text="${filmed.location.Loc_name} + ':' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"></li>
-								<li th:each="participate : ${art.participates}"
-									th:text="${participate.actorName}"></li>
+								<td th:each="filmed : ${art.filmedList}"
+									th:text="${filmed.location.Loc_name} + ':' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"></td>
+								<td th:each="participate : ${art.participates}"
+									th:text="${participate.actorName}"></td>
 							</tr>
 						</div>
 						<div th:if="${iterStat.index == 3}" id="content-box-4">
 							<tr>
 								<td th:text="${art.genreStatus}" onchange="toggleMenu()"></td>
 								<td th:text="${art.name}"></td>
-								<li th:each="filmed : ${art.filmedList}"
-									th:text="${filmed.location.Loc_name} + ':' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"></li>
-								<li th:each="participate : ${art.participates}"
-									th:text="${participate.actorName}"></li>
+								<td th:each="filmed : ${art.filmedList}"
+									th:text="${filmed.location.Loc_name} + ':' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"></td>
+								<td th:each="participate : ${art.participates}"
+									th:text="${participate.actorName}"></td>
 							</tr>
 						</div>
 					</div>
 				</div>
+
 				<!-- 페이징처리 시작 -->
 				<div th:if="${!paging.isEmpty()}" >
 					<ul class="pagination">
@@ -115,6 +116,7 @@
 					</ul>
 				</div>
 				<!-- 페이징처리 끝 -->
+
 			</div>
 
 			<div id="map" style="width:80%; height:97%;"></div>
@@ -133,7 +135,7 @@
 
 			  var positions = [];
 
-			  /*[# th:each="art : ${arts}"]*/
+			  /*[# th:each="art : ${allArts}"]*/
 				/*[# th:each="filmed : ${art.filmedList}"]*/
 				  positions.push({
 					title: [[${art.name}]],
@@ -157,9 +159,16 @@
 					  content: '<div style="width:100px;text-align:center;padding:6px 0;">' + position.title + '</div>'
 					});
 					infowindow.open(map, marker);
+
+					bounds.extend(coords);
 				  }
 				});
 			  });
+
+			   	setTimeout(function() {
+    				map.setBounds(bounds);
+  				}, 250);
+
 			  /*]]>*/
 			</script>
 			<div id="footer">Ajou University 2023-1 Database Final project&nbsp;&nbsp;&nbsp;</div>
