@@ -135,7 +135,7 @@
 
 			  var positions = [];
 
-			  /*[# th:each="art : ${paging}"]*/
+			  /*[# th:each="art : ${allArts}"]*/
 				/*[# th:each="filmed : ${art.filmedList}"]*/
 				  positions.push({
 					title: [[${art.name}]],
@@ -159,9 +159,16 @@
 					  content: '<div style="width:100px;text-align:center;padding:6px 0;">' + position.title + '</div>'
 					});
 					infowindow.open(map, marker);
+
+					bounds.extend(coords);
 				  }
 				});
 			  });
+
+			   	setTimeout(function() {
+    				map.setBounds(bounds);
+  				}, 250);
+
 			  /*]]>*/
 			</script>
 			<div id="footer">Ajou University 2023-1 Database Final project&nbsp;&nbsp;&nbsp;</div>

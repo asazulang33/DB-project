@@ -90,6 +90,58 @@ public class InitDb {
             Actor actor25 = createActor("정호연", "여자");
             em.persist(actor25);
 
+            Actor actor26 = createActor("남궁민", "남자");
+            em.persist(actor26);
+            Actor actor27 = createActor("신혜선", "여자");
+            em.persist(actor27);
+            Actor actor28 = createActor("안보현", "남자");
+            em.persist(actor28);
+            Actor actor29 = createActor("하윤경", "여자");
+            em.persist(actor29);
+            Actor actor30 = createActor("안동구", "여자");
+            em.persist(actor30);
+            Actor actor31 = createActor("이채민", "남자");
+            em.persist(actor31);
+            Actor actor32 = createActor("차청화", "여자");
+            em.persist(actor32);
+            Actor actor33 = createActor("이보영", "여자");
+            em.persist(actor33);
+            Actor actor34 = createActor("이요원", "여자");
+            em.persist(actor34);
+            Actor actor35 = createActor("엄태웅", "남자");
+            em.persist(actor35);
+            Actor actor36 = createActor("김남길", "남자");
+            em.persist(actor36);
+            Actor actor37 = createActor("조인성", "남자");
+            em.persist(actor37);
+            Actor actor38 = createActor("공효진", "여자");
+            em.persist(actor38);
+            Actor actor39 = createActor("이성경", "여자");
+            em.persist(actor39);
+            Actor actor40 = createActor("이광수", "남자");
+            em.persist(actor40);
+            Actor actor41 = createActor("성동일", "남자");
+            em.persist(actor41);
+            Actor actor42 = createActor("차화연", "여자");
+            em.persist(actor42);
+            Actor actor43 = createActor("김미경", "여자");
+            em.persist(actor43);
+            Actor actor44 = createActor("박보영", "여자");
+            em.persist(actor44);
+            Actor actor45 = createActor("박서준", "남자");
+            em.persist(actor45);
+            Actor actor46 = createActor("김다미", "여자");
+            em.persist(actor46);
+            Actor actor47 = createActor("엄정화", "여자");
+            em.persist(actor47);
+            Actor actor48 = createActor("조정석", "남자");
+            em.persist(actor48);
+            Actor actor49 = createActor("이덕화", "남자");
+            em.persist(actor49);
+            Actor actor50 = createActor("김혜수", "여자");
+            em.persist(actor50);
+            Actor actor51 = createActor("서현", "여자");
+            em.persist(actor51);
 
 
             // 장소 생성 및 저장
@@ -121,9 +173,31 @@ public class InitDb {
             em.persist(location11);
             Location location12 = Location.createLoc("휴먼(붕어빵집)", "서울특별시", "도봉구", "노해로70길 81");
             em.persist(location12);
-            //임의 데이터
-            Location location13 = Location.createLoc("아주대학교", "경기도 수원시", "영통구", "월드컵로 206");
+
+            Location location13 = Location.createLoc("비둘기산폭포", "경기도 포천시", "영북면", "대회산리 415-2");
             em.persist(location13);
+            Location location14 = Location.createLoc("에코테마파크 대구숲", "대구", "달성군 가창면", "가창로 1003");
+            em.persist(location14);
+            Location location15 = Location.createLoc("안압지", "인천", "중구", "왕산마리나길 143");
+            em.persist(location15);
+            Location location16 = Location.createLoc("왕산마리나항", "대구", "달성군 가창면", "가창로 1003");
+            em.persist(location16);
+            Location location17 = Location.createLoc("군헌갯발체험학습장", "충남 보령시", "신흑동", "해안로 607-5");
+            em.persist(location17);
+            Location location18 = Location.createLoc("채석강", "전북", "부안군 변산면", "채석강길 32");
+            em.persist(location18);
+            Location location19 = Location.createLoc("일산호수공원", "경기 고양시", "일산동구", "호수로 595");
+            em.persist(location19);
+            Location location20 = Location.createLoc("제주섭지코지", "제주도", "서귀포시", "섭지코지로 262");
+            em.persist(location20);
+            Location location21 = Location.createLoc("다도해해상국립공원", "전남", "완도군 완도읍", "개포로62번길 17-13");
+            em.persist(location21);
+            Location location22 = Location.createLoc("대한성공회내동교회", "인천광역시", "중구", "개항로45번길 21-32");
+            em.persist(location22);
+            Location location23 = Location.createLoc("화인산림욕장", "충북", "옥천군 안남면", "안남로 151-66");
+            em.persist(location23);
+            Location location24 = Location.createLoc("운탄고도", "강원", "영월군 영월읍", "청령포로 126-3");
+            em.persist(location24);
 
 
             // 작품 생성 및 저장
@@ -137,7 +211,19 @@ public class InitDb {
                     Arrays.asList(location8, location9));
             createArt("오징어 게임", 2020, DRAMA, Arrays.asList(actor11, actor22, actor23, actor24, actor25),
                     Arrays.asList(location10, location11, location12));
-            createArt("지옥의 과제", 2023, ANIMATION, Arrays.asList(actor25), Arrays.asList(location13));
+
+
+            createArt("괜찮아 사랑이야", 2014, DRAMA, Arrays.asList(actor37, actor38, actor39, actor40, actor41), Arrays.asList(location13, location14));
+            createArt("선덕여왕", 2023, DRAMA, Arrays.asList(actor9, actor34), Arrays.asList(location15));
+            createArt("뻉반", 2023, MOVIE, Arrays.asList(actor38, actor48), Arrays.asList(location16));
+            createArt("질투의 화신", 2023, DRAMA, Arrays.asList(actor38, actor48), Arrays.asList(location17));
+            createArt("이번 생도 잘 부탁해", 2023, DRAMA, Arrays.asList(actor27, actor28, actor29, actor30), Arrays.asList(location18));
+            createArt("대행사", 2023, DRAMA, Arrays.asList(actor33, actor43), Arrays.asList(location19));
+            createArt("마녀", 2023, MOVIE, Arrays.asList(actor4, actor46), Arrays.asList(location20));
+            createArt("밀수", 2023, MOVIE, Arrays.asList(actor37, actor50), Arrays.asList(location21));
+            createArt("닥터 차정숙", 2023, DRAMA, Arrays.asList(actor47, actor43), Arrays.asList(location22));
+            createArt("도적 : 칼의 소리", 2023, MOVIE, Arrays.asList(actor36, actor51), Arrays.asList(location23));
+            createArt("천원짜리 변호사", 2022, DRAMA, Arrays.asList(actor26, actor49), Arrays.asList(location24));
         }
 
 

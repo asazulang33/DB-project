@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 
 @Controller
 @Slf4j
@@ -26,6 +28,9 @@ public class HomeController {
     public String home(@ModelAttribute("artSearch") ArtSearch artSearch,
                        @RequestParam(value="page", defaultValue="0") int page,
                        Model model) {
+
+        List<Art> allArts = artService.findArts(artSearch);
+        model.addAttribute("allArts", allArts);
 
         Page<Art> paging = artService.findArtsPage(artSearch, PageRequest.of(page, 4));
         model.addAttribute("paging", paging);
