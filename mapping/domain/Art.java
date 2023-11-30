@@ -63,24 +63,4 @@ public class Art {
 
         return art;
     }
-
-    public static Art createArtMovie(String artName, Integer year, List<Filmed> filmedList, List<Actor> actors) {
-        return createArt(artName, year, filmedList, actors, GenreStatus.MOVIE);
-    }
-
-    public static Art createArtDrama(String artName, Integer year, List<Filmed> filmedList, List<Actor> actors) {
-        return createArt(artName, year, filmedList, actors, GenreStatus.DRAMA);
-    }
-
-    public static Art createArtBook(String artName, Integer year, List<Filmed> filmedList, List<Actor> actors) {
-        return createArt(artName, year, filmedList, actors, GenreStatus.BOOK);
-    }
-
-    public static Art createArtAnimation(String artName, Integer year, List<Filmed> filmedList, List<Actor> actors) {
-        return createArt(artName, year, filmedList, actors, GenreStatus.ANIMATION);
-    }
-
-    public static Art createArtMusic(String artName, Integer year, List<Filmed> filmedList, List<Actor> actors) {
-        return createArt(artName, year, filmedList, actors, GenreStatus.MUSIC);
-    }
 }

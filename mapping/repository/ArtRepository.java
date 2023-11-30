@@ -80,24 +80,14 @@ public class ArtRepository {
         return query.getResultList();
     }
 
-    // 페이징 처리를 위한 메소드 추가
-    public Page<Art> findAll(Pageable pageable) {
-        TypedQuery<Art> query = em.createQuery("select a from Art a", Art.class);
-        int totalRows = query.getResultList().size();
-        List<Art> results = query.setFirstResult((int) pageable.getOffset())
-                .setMaxResults(pageable.getPageSize())
-                .getResultList();
-
-        return new PageImpl<>(results, pageable, totalRows);
-    }
-
-    public List<Art> findArtsByCriteria(ArtSearch artSearch) {
+    public Page<Art> findArtsPage(ArtSearch artSearch, Pageable pageable) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Art> cq = cb.createQuery(Art.class);
         Root<Art> art = cq.from(Art.class);
 
         List<Predicate> predicates = new ArrayList<>();
 
+        // 필터링 조건 추가
         if (artSearch.getGenreStatus() != null) {
             predicates.add(cb.equal(art.get("genreStatus"), artSearch.getGenreStatus()));
         }
@@ -107,8 +97,13 @@ public class ArtRepository {
         }
 
         cq.where(cb.and(predicates.toArray(new Predicate[0])));
-        TypedQuery<Art> query = em.createQuery(cq);
 
-        return query.getResultList();
+        TypedQuery<Art> query = em.createQuery(cq);
+        int totalRows = query.getResultList().size();
+        List<Art> results = query.setFirstResult((int) pageable.getOffset())
+                .setMaxResults(pageable.getPageSize())
+                .getResultList();
+
+        return new PageImpl<>(results, pageable, totalRows);
     }
 }
