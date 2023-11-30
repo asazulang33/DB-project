@@ -89,7 +89,6 @@ public class InitDb {
             em.persist(actor24);
             Actor actor25 = createActor("정호연", "여자");
             em.persist(actor25);
-
             Actor actor26 = createActor("남궁민", "남자");
             em.persist(actor26);
             Actor actor27 = createActor("신혜선", "여자");
@@ -173,7 +172,7 @@ public class InitDb {
             em.persist(location11);
             Location location12 = Location.createLoc("휴먼(붕어빵집)", "서울특별시", "도봉구", "노해로70길 81");
             em.persist(location12);
-
+            // 영화 및 드라마
             Location location13 = Location.createLoc("비둘기산폭포", "경기도 포천시", "영북면", "대회산리 415-2");
             em.persist(location13);
             Location location14 = Location.createLoc("에코테마파크 대구숲", "대구", "달성군 가창면", "가창로 1003");
@@ -201,21 +200,14 @@ public class InitDb {
 
 
             // 작품 생성 및 저장
-            createArt("기생충", 2019, MOVIE, Arrays.asList(actor1, actor2, actor3, actor4, actor5, actor6, actor7),
-                    Arrays.asList(location1, location2, location3, location4, location5, location6));
-            createArt("모래시계", 2020, DRAMA, Arrays.asList(actor8, actor9, actor10, actor11),
-                    Arrays.asList(location7));
-            createArt("극한직업", 2019, MOVIE, Arrays.asList(actor12, actor13, actor14, actor15, actor16),
-                    Arrays.asList(location8));
-            createArt("도깨비", 2016, DRAMA, Arrays.asList(actor17, actor18, actor19, actor20, actor21),
-                    Arrays.asList(location8, location9));
-            createArt("오징어 게임", 2020, DRAMA, Arrays.asList(actor11, actor22, actor23, actor24, actor25),
-                    Arrays.asList(location10, location11, location12));
-
-
+            createArt("기생충", 2019, MOVIE, Arrays.asList(actor1, actor2, actor3, actor4, actor5, actor6, actor7), Arrays.asList(location1, location2, location3, location4, location5, location6));
+            createArt("모래시계", 2020, DRAMA, Arrays.asList(actor8, actor9, actor10, actor11), Arrays.asList(location7));
+            createArt("극한직업", 2019, MOVIE, Arrays.asList(actor12, actor13, actor14, actor15, actor16), Arrays.asList(location8));
+            createArt("도깨비", 2016, DRAMA, Arrays.asList(actor17, actor18, actor19, actor20, actor21), Arrays.asList(location8, location9));
+            createArt("오징어 게임", 2020, DRAMA, Arrays.asList(actor11, actor22, actor23, actor24, actor25), Arrays.asList(location10, location11, location12));
             createArt("괜찮아 사랑이야", 2014, DRAMA, Arrays.asList(actor37, actor38, actor39, actor40, actor41), Arrays.asList(location13, location14));
             createArt("선덕여왕", 2023, DRAMA, Arrays.asList(actor9, actor34), Arrays.asList(location15));
-            createArt("뻉반", 2023, MOVIE, Arrays.asList(actor38, actor48), Arrays.asList(location16));
+            createArt("뺑반", 2023, MOVIE, Arrays.asList(actor38, actor48), Arrays.asList(location16));
             createArt("질투의 화신", 2023, DRAMA, Arrays.asList(actor38, actor48), Arrays.asList(location17));
             createArt("이번 생도 잘 부탁해", 2023, DRAMA, Arrays.asList(actor27, actor28, actor29, actor30), Arrays.asList(location18));
             createArt("대행사", 2023, DRAMA, Arrays.asList(actor33, actor43), Arrays.asList(location19));
