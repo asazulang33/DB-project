@@ -56,54 +56,49 @@
 					<div th:each="art, iterStat : ${paging.content}">
 						<div th:if="${iterStat.index == 0}" id="content-box-1">
 							<tr>
+								<div id="cb1-info">
 								<td th:text="${art.genreStatus}" onchange="toggleMenu()"></td>
-								<br><th>작품명 : </th>
-								<td th:text="${art.name}"></td> <br>
-								<th>주소</th><br>
-								<li th:each="filmed : ${art.filmedList}"
-									th:text="${filmed.location.Loc_name} + ' : ' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"></li>
-								<th>출연진</th></br>
+								<td th:text="'작품명 : ' + ${art.name}"></td>
 								<th th:each="participate : ${art.participates}"
 									th:text="${participate.actorName}"></th>
+								</div>
+								<div id="cb1-loc">
+								<p th:each="filmed : ${art.filmedList}"
+									th:text="'▶'+${filmed.location.Loc_name} + ' : ' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"></p>
+								</div>
 							</tr>
 						</div>
-						<hr><div th:if="${iterStat.index == 1}" id="content-box-2">
-							<tr >
-							<td th:text="${art.genreStatus}" onchange="toggleMenu()"></td>
-							<br><th>작품명 : </th>
-							<td th:text="${art.name}"></td> <br>
-							<th>주소</th><br>
-							<li th:each="filmed : ${art.filmedList}"
-								th:text="${filmed.location.Loc_name} + ' : ' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"></li>
-							<th>출연진</th></br>
-							<th th:each="participate : ${art.participates}"
-								th:text="${participate.actorName}"></th>
+						<div th:if="${iterStat.index == 1}" id="content-box-2">
+							<tr>
+								<td th:text="${art.genreStatus}" onchange="toggleMenu()"></td>
+								<br><th></th>
+								<td th:text="'작품명 : ' + ${art.name}"></td> <br>
+								<th th:each="participate : ${art.participates}"
+									th:text="${participate.actorName}"></th>
+								<li th:each="filmed : ${art.filmedList}"
+									th:text="${filmed.location.Loc_name} + ' : ' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"></li>
 							</tr>
 						</div>
 						<div th:if="${iterStat.index == 2}" id="content-box-3">
 							<tr>
 								<td th:text="${art.genreStatus}" onchange="toggleMenu()"></td>
-								<br><th>작품명 : </th>
-								<td th:text="${art.name}"></td> <br>
-								<th>주소</th><br>
-								<li th:each="filmed : ${art.filmedList}"
-									th:text="${filmed.location.Loc_name} + ' : ' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"></li>
-								<th>출연진</th></br>
+								<br><th></th>
+								<td th:text="'작품명 : ' + ${art.name}"></td> <br>
 								<th th:each="participate : ${art.participates}"
 									th:text="${participate.actorName}"></th>
+								<li th:each="filmed : ${art.filmedList}"
+									th:text="${filmed.location.Loc_name} + ' : ' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"></li>
 							</tr>
 						</div>
 						<div th:if="${iterStat.index == 3}" id="content-box-4">
 							<tr>
 								<td th:text="${art.genreStatus}" onchange="toggleMenu()"></td>
-								<br><th>작품명 : </th>
-								<td th:text="${art.name}"></td> <br>
-								<th>주소</th><br>
-								<li th:each="filmed : ${art.filmedList}"
-									th:text="${filmed.location.Loc_name} + ' : ' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"></li>
-								<th>출연진</th></br>
+								<br><th></th>
+								<td th:text="'작품명 : ' + ${art.name}"></td> <br>
 								<th th:each="participate : ${art.participates}"
 									th:text="${participate.actorName}"></th>
+								<li th:each="filmed : ${art.filmedList}"
+									th:text="${filmed.location.Loc_name} + ' : ' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"></li>
 							</tr>
 						</div>
 					</div>
