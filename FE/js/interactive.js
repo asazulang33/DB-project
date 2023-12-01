@@ -1,3 +1,4 @@
+
 function handleOnChange(e) {
 	const text = e.options[e.selectedIndex].text;
 	if (text.isNaN){
@@ -10,33 +11,13 @@ function handleOnChange(e) {
 }
 
 function toggleMenu(){
-	if(document.getElementById("content-box-1").style.left == "0px") {
-		
-	}
-	else {
-		document.getElementById("content-box-1").style.left = "0px"
-	}
+	document.getElementById("content-box-1").style.left = "0px"
 	setTimeout(function(){
-		if(document.getElementById("content-box-2").style.left == "0px") {
-			
-		}
-		else {
-			document.getElementById("content-box-2").style.left = "0px"
-		}
+		document.getElementById("content-box-2").style.left = "0px"
 		setTimeout(function(){
-			if(document.getElementById("content-box-3").style.left == "0px") {
-				
-			}
-			else {
-				document.getElementById("content-box-3").style.left = "0px"
-			}
+			document.getElementById("content-box-3").style.left = "0px"
 			setTimeout(function(){
-				if(document.getElementById("content-box-4").style.left == "0px") {
-					
-				}
-				else {
-					document.getElementById("content-box-4").style.left = "0px"
-				}
+				document.getElementById("content-box-4").style.left = "0px"
 			}, 100);
 		}, 100);
 	}, 100);

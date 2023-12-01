@@ -137,7 +137,7 @@
 	flex-wrap: wrap;
 }
 #content-box-1 {
-	height: 22%;
+	height: calc(100%/4);
 	width: calc(100%-4px);
 	background: #DDD;
 	position: relative;
@@ -145,23 +145,47 @@
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: column wrap;
 	word-break: break-all;
 	transition: left .5s;
 }
 #cb1-info {
-	height: 100%;
-	width: 30%;
+	height: 30%;
+	width: 100%;
 	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	flex-flow: column wrap;
+	flex-flow: row wrap;
 	word-break: break-all;
 	transition: left .5s;
 }
-#cb1-info td,th {
+#cb1-type{
+	height: 100%;
+	width: 50%;
+	font-family: 'Gugi';
+	font-size: 14px;
+	word-break: break-all;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-wrap: wrap;
+	display: flex;
+}
+#cb1-name{
+	height: 100%;
+	width: 50%;
+	font-family: 'Gugi';
+	font-size: 14px;
+	word-break: break-all;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-wrap: wrap;
+	display: flex;
+}
+#cb1-part {
 	height: 30%;
 	width: 100%;
 	font-family: 'Gugi';
@@ -170,6 +194,7 @@
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	flex-wrap: wrap;
 	display: flex;
 }
 #cb1-loc {
@@ -185,7 +210,7 @@
 	transition: left .5s;
 }
 #content-box-2 {
-	height: 22%;
+	height: calc(100%/4);
 	width: calc(100%-4px);
 	background: #DDD;
 	position: relative;
@@ -193,21 +218,87 @@
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 	display: flex;
+	flex-flow: column wrap;
+	word-break: break-all;
+	transition: left .5s;
+}
+#cb2-info {
+	height: 30%;
+	width: 100%;
+	position: relative;
+	display: flex;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
 	flex-flow: row wrap;
 	word-break: break-all;
+	transition: left .5s;
+}
+#cb2-type{
+	height: 100%;
+	width: 50%;
+	font-family: 'Gugi';
+	font-size: 14px;
+	word-break: break-all;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-wrap: wrap;
+	display: flex;
+}
+#cb2-name{
+	height: 100%;
+	width: 50%;
+	font-family: 'Gugi';
+	font-size: 14px;
+	word-break: break-all;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-wrap: wrap;
+	display: flex;
+}
+#cb2-part {
+	height: 30%;
+	width: 100%;
+	font-family: 'Gugi';
+	font-size: 14px;
+	word-break: break-all;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-wrap: wrap;
+	display: flex;
+}
+#cb2-loc {
+	height: 100%;
+	flex: 1 1 auto;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	word-break: break-all;
+	flex-wrap: wrap;
 	transition: left .5s;
 }
 #content-box-3 {
-	height: 22%;
+	height: calc(100%/4);
 	width: calc(100%-4px);
 	background: #DDD;
 	position: relative;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
+	display: flex;
+	flex-flow: column wrap;
+	word-break: break-all;
+	transition: left .5s;
+}
+#cb3-info {
+	height: 30%;
+	width: 100%;
+	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -216,8 +307,56 @@
 	word-break: break-all;
 	transition: left .5s;
 }
+#cb3-type{
+	height: 100%;
+	width: 50%;
+	font-family: 'Gugi';
+	font-size: 14px;
+	word-break: break-all;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-wrap: wrap;
+	display: flex;
+}
+#cb3-name{
+	height: 100%;
+	width: 50%;
+	font-family: 'Gugi';
+	font-size: 14px;
+	word-break: break-all;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-wrap: wrap;
+	display: flex;
+}
+#cb3-part {
+	height: 30%;
+	width: 100%;
+	font-family: 'Gugi';
+	font-size: 14px;
+	word-break: break-all;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-wrap: wrap;
+	display: flex;
+}
+#cb3-loc {
+	height: 100%;
+	flex: 1 1 auto;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	word-break: break-all;
+	flex-wrap: wrap;
+	transition: left .5s;
+}
 #content-box-4 {
-	height: 22%;
+	height: calc(100%/4);
 	width: calc(100%-4px);
 	background: #DDD;
 	position: relative;
@@ -225,11 +364,68 @@
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 	display: flex;
+	flex-flow: column wrap;
+	word-break: break-all;
+	transition: left .5s;
+}
+#cb4-info {
+	height: 30%;
+	width: 100%;
+	position: relative;
+	display: flex;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
 	flex-flow: row wrap;
 	word-break: break-all;
+	transition: left .5s;
+}
+#cb4-type{
+	height: 100%;
+	width: 50%;
+	font-family: 'Gugi';
+	font-size: 14px;
+	word-break: break-all;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-wrap: wrap;
+	display: flex;
+}
+#cb4-name{
+	height: 100%;
+	width: 50%;
+	font-family: 'Gugi';
+	font-size: 14px;
+	word-break: break-all;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-wrap: wrap;
+	display: flex;
+}
+#cb4-part {
+	height: 30%;
+	width: 100%;
+	font-family: 'Gugi';
+	font-size: 14px;
+	word-break: break-all;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-wrap: wrap;
+	display: flex;
+}
+#cb4-loc {
+	height: 100%;
+	flex: 1 1 auto;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	word-break: break-all;
+	flex-wrap: wrap;
 	transition: left .5s;
 }
 

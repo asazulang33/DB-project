@@ -34,7 +34,7 @@
 						<option value="ANIMATION" style="font-family: 'Gugi';">애니메이션</option>
 						<option value="MUSIC" style="font-family: 'Gugi';">뮤직비디오</option>
 					</select>
-					<button type="submit" class="btn btn-primary" style="font-family: 'Gugi'; font-size: 0.5vw; width: 50%;">검색</button>
+					<button type="submit" class="btn btn-primary" style="font-family: 'Gugi'; font-size: 0.5vw; width: 50%;" onclick="toggleMenu()">검색</button>
 				</div>
 				<div class="form-group" style="display: flex; flex-flow: row nowrap; justify-content: flex-start;">
 					<label for="artName" style="font-size: 0.9vw; height: 30%; width: 50% ">작품명</label>
@@ -57,48 +57,81 @@
 						<div th:if="${iterStat.index == 0}" id="content-box-1">
 							<tr>
 								<div id="cb1-info">
-								<td th:text="${art.genreStatus}" onchange="toggleMenu()" style="font-family: 'Gugi'; font-size: 14px;"></td><br>
-								<td th:text="'작품명 : ' + ${art.name}" style="font-family: 'Gugi'; font-size: 14px;"></td><br>
-								<th th:each="participate : ${art.participates}"
-									th:text="${participate.actorName}" style="font-family: 'Gugi'; font-size: 14px;"></th>
+									<div id="cb1-type">
+										<td th:text="${art.genreStatus}" onchange="toggleMenu()" style="font-family: 'Gugi'; font-size: 14px;"></td><br>
+									</div>
+									<div id="cb1-name">
+										<td th:text="${art.name}" style="font-family: 'Gugi'; font-size: 14px;"></td><br>
+									</div>
 								</div>
-								<div id="cb1-loc" style="font-family: 'Gugi'; font-size: 5px;">
-								<p th:each="filmed : ${art.filmedList}"
-									th:text="'▶'+${filmed.location.Loc_name} + ' : ' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"style="font-family: 'Gugi'; font-size: 5px;"></p>
+								<div id="cb1-part" style="font-family: 'Gugi'; font-size: 14px;">
+									<th th:each="participate : ${art.participates}"
+										th:text="${participate.actorName}" style="font-family: 'Gugi'; font-size: 14px;"></th>
+								</div>
+								<div id="cb1-loc" style="font-family: 'Gugi'; font-size: 14px;">
+									<p th:each="filmed : ${art.filmedList}"
+										th:text="'▶'+${filmed.location.Loc_name} + ' : ' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"style="font-family: 'Gugi'; font-size: 14px;"></p>
 								</div>
 							</tr>
 						</div>
 						<div th:if="${iterStat.index == 1}" id="content-box-2">
 							<tr>
-								<td th:text="${art.genreStatus}" onchange="toggleMenu()"></td>
-								<br><th></th>
-								<td th:text="'작품명 : ' + ${art.name}"></td> <br>
-								<th th:each="participate : ${art.participates}"
-									th:text="${participate.actorName}"></th>
-								<li th:each="filmed : ${art.filmedList}"
-									th:text="${filmed.location.Loc_name} + ' : ' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"></li>
+								<div id="cb2-info">
+									<div id="cb2-type">
+										<td th:text="${art.genreStatus}" onchange="toggleMenu()" style="font-family: 'Gugi'; font-size: 14px;"></td><br>
+									</div>
+									<div id="cb2-name">
+										<td th:text="${art.name}" style="font-family: 'Gugi'; font-size: 14px;"></td><br>
+									</div>
+								</div>
+								<div id="cb2-part" style="font-family: 'Gugi'; font-size: 14px;">
+									<th th:each="participate : ${art.participates}"
+										th:text="${participate.actorName}" style="font-family: 'Gugi'; font-size: 14px;"></th>
+								</div>
+								<div id="cb2-loc" style="font-family: 'Gugi'; font-size: 14px;">
+									<p th:each="filmed : ${art.filmedList}"
+										th:text="'▶'+${filmed.location.Loc_name} + ' : ' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"style="font-family: 'Gugi'; font-size: 14px;"></p>
+								</div>
 							</tr>
 						</div>
 						<div th:if="${iterStat.index == 2}" id="content-box-3">
 							<tr>
-								<td th:text="${art.genreStatus}" onchange="toggleMenu()"></td>
-								<br><th></th>
-								<td th:text="'작품명 : ' + ${art.name}"></td> <br>
-								<th th:each="participate : ${art.participates}"
-									th:text="${participate.actorName}"></th>
-								<li th:each="filmed : ${art.filmedList}"
-									th:text="${filmed.location.Loc_name} + ' : ' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"></li>
+								<div id="cb3-info">
+									<div id="cb3-type">
+										<td th:text="${art.genreStatus}" onchange="toggleMenu()" style="font-family: 'Gugi'; font-size: 14px;"></td><br>
+									</div>
+									<div id="cb3-name">
+										<td th:text="${art.name}" style="font-family: 'Gugi'; font-size: 14px;"></td><br>
+									</div>
+								</div>
+								<div id="cb3-part" style="font-family: 'Gugi'; font-size: 14px;">
+									<th th:each="participate : ${art.participates}"
+										th:text="${participate.actorName}" style="font-family: 'Gugi'; font-size: 14px;"></th>
+								</div>
+								<div id="cb3-loc" style="font-family: 'Gugi'; font-size: 14px;">
+									<p th:each="filmed : ${art.filmedList}"
+										th:text="'▶'+${filmed.location.Loc_name} + ' : ' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"style="font-family: 'Gugi'; font-size: 14px;"></p>
+								</div>
 							</tr>
 						</div>
 						<div th:if="${iterStat.index == 3}" id="content-box-4">
 							<tr>
-								<td th:text="${art.genreStatus}" onchange="toggleMenu()"></td>
-								<br><th></th>
-								<td th:text="'작품명 : ' + ${art.name}"></td> <br>
-								<th th:each="participate : ${art.participates}"
-									th:text="${participate.actorName}"></th>
-								<li th:each="filmed : ${art.filmedList}"
-									th:text="${filmed.location.Loc_name} + ' : ' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"></li>
+								<div id="cb4-info">
+									<div id="cb4-type">
+										<td th:text="${art.genreStatus}" onchange="toggleMenu()" style="font-family: 'Gugi'; font-size: 14px;"></td><br>
+									</div>
+									<div id="cb4-name">
+										<td th:text="${art.name}" style="font-family: 'Gugi'; font-size: 14px;"></td><br>
+									</div>
+								</div>
+								<div id="cb4-part" style="font-family: 'Gugi'; font-size: 14px;">
+									<th th:each="participate : ${art.participates}"
+										th:text="${participate.actorName}" style="font-family: 'Gugi'; font-size: 14px;"></th>
+								</div>
+								<div id="cb4-loc" style="font-family: 'Gugi'; font-size: 14px;">
+									<p th:each="filmed : ${art.filmedList}"
+										th:text="'▶'+${filmed.location.Loc_name} + ' : ' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"style="font-family: 'Gugi'; font-size: 14px;"></p>
+								</div>
 							</tr>
 						</div>
 					</div>
