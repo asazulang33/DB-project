@@ -57,8 +57,8 @@
 						<div th:if="${iterStat.index == 0}" id="content-box-1">
 							<tr>
 								<div id="cb1-info">
-								<td th:text="${art.genreStatus}" onchange="toggleMenu()"></td>
-								<td th:text="'작품명 : ' + ${art.name}"></td>
+								<td th:text="${art.genreStatus}" onchange="toggleMenu()"></td><br>
+								<td th:text="'작품명 : ' + ${art.name}"></td><br>
 								<th th:each="participate : ${art.participates}"
 									th:text="${participate.actorName}"></th>
 								</div>
