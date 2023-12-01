@@ -145,9 +145,6 @@
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
 	flex-flow: row wrap;
 	word-break: break-all;
 	transition: left .5s;
