@@ -141,6 +141,40 @@ public class InitDb {
             em.persist(actor50);
             Actor actor51 = createActor("서현", "여자");
             em.persist(actor51);
+            Actor actor52 = createActor("강하늘", "남자");
+            em.persist(actor52);
+            Actor actor53 = createActor("김지석", "남자");
+            em.persist(actor53);
+            Actor actor54 = createActor("염혜란", "여자");
+            em.persist(actor54);
+            Actor actor55 = createActor("오정세", "남자");
+            em.persist(actor55);
+
+            // 뉴진스
+            Actor actor56 = createActor("하니", "여자");
+            em.persist(actor56);
+            Actor actor57 = createActor("해린", "여자");
+            em.persist(actor57);
+            Actor actor58 = createActor("민지", "여자");
+            em.persist(actor58);
+            Actor actor59 = createActor("다니엘", "여자");
+            em.persist(actor59);
+
+            //변신로봇 또봇
+            Actor actor60 = createActor("차하나", "남자");
+            em.persist(actor60);
+            Actor actor61 = createActor("차두리", "남자");
+            em.persist(actor61);
+
+            // 호텔 델루나
+            Actor actor62 = createActor("이지은", "여자");
+            em.persist(actor62);
+            Actor actor63 = createActor("여진구", "남자");
+            em.persist(actor63);
+            Actor actor64 = createActor("이도현", "남자");
+            em.persist(actor64);
+            Actor actor65 = createActor("김수현", "남자");
+            em.persist(actor65);
 
 
             // 장소 생성 및 저장
@@ -157,14 +191,17 @@ public class InitDb {
             em.persist(location5);
             Location location6 = Location.createLoc("전주영화종합촬영소(박 사장 집)", "전라북도 전주시", "완산구", "원상림길 125-14");
             em.persist(location6);
+
             //이하 모래시계
             Location location7 = Location.createLoc("정동진역", "강원도 강릉시", "강동면", "정동역길 17");
             em.persist(location7);
+
             //이하 극한직업&도깨비
             Location location8 = Location.createLoc("배다리 헌책방거리", "인천광역시", "동구", "중앙로 2");
             em.persist(location8);
             Location location9 = Location.createLoc("덕성여자대학 종로캠퍼스", "서울특별시", "종로구", "종로1.2.3.4가동");
             em.persist(location9);
+
             //이하 오징어게임
             Location location10 = Location.createLoc("팔도건어물", "서울특별시", "도봉구", "삼양로154길 36");
             em.persist(location10);
@@ -172,6 +209,7 @@ public class InitDb {
             em.persist(location11);
             Location location12 = Location.createLoc("휴먼(붕어빵집)", "서울특별시", "도봉구", "노해로70길 81");
             em.persist(location12);
+
             // 영화 및 드라마
             Location location13 = Location.createLoc("비둘기산폭포", "경기도 포천시", "영북면", "대회산리 415-2");
             em.persist(location13);
@@ -198,6 +236,36 @@ public class InitDb {
             Location location24 = Location.createLoc("운탄고도", "강원", "영월군 영월읍", "청령포로 126-3");
             em.persist(location24);
 
+            // 동백꽃 필 무렵
+            Location location25 = Location.createLoc("구룡포일본인가옥거리", "경북 포항시", "남구", "구룡포읍 구룡포리");
+            em.persist(location25);
+            Location location26 = Location.createLoc("구룡포항", "경북 포항시", "남구", "구룡포읍 호미로 222-1");
+            em.persist(location26);
+            Location location27 = Location.createLoc("아라 예술촌", "경북 포항시", "남구", "구룡포읍 용주로7번길 30");
+            em.persist(location27);
+            Location location28 = Location.createLoc("대보항", "경북 포항시" , "남구", "호미곶면 구만길 279-8");
+            em.persist(location28);
+
+            // 뉴진스 - Ditto 뮤비 촬영지
+            Location location29 = Location.createLoc("계성중고등학교", "대구" , "중구", "대신동 277-1");
+            em.persist(location29);
+            Location location30 = Location.createLoc("청라언덕(관광명소)", "대구" , "중구", "달구벌대로 2029");
+            em.persist(location30);
+
+            // 변신 로봇 또봇
+            Location location31= Location.createLoc("구로경찰서", "서울" , "구로구", "가마산로 235");
+            em.persist(location31);
+
+            //호텔 델루나
+            Location location32 = Location.createLoc("목포근대역사관 1관", "전남" , "목포시", "영산로29번길 6");
+            em.persist(location32);
+            Location location33 = Location.createLoc("파라다이스시티(호텔)", "인천" , "중구", "영종해안남로321번길 186");
+            em.persist(location33);
+            Location location34 = Location.createLoc("망상해변(해수욕장)", "강원특별자치도" , "동해시", "동해대로 6270-10");
+            em.persist(location34);
+            Location location35 = Location.createLoc("한국보건대학교(폐교,사유지)", "경상북도" , "김천시", "어모면 옥율리 산 27-1");
+            em.persist(location35);
+
 
             // 작품 생성 및 저장
             createArt("기생충", 2019, MOVIE, Arrays.asList(actor1, actor2, actor3, actor4, actor5, actor6, actor7), Arrays.asList(location1, location2, location3, location4, location5, location6));
@@ -216,6 +284,10 @@ public class InitDb {
             createArt("닥터 차정숙", 2023, DRAMA, Arrays.asList(actor47, actor43), Arrays.asList(location22));
             createArt("도적 : 칼의 소리", 2023, MOVIE, Arrays.asList(actor36, actor51), Arrays.asList(location23));
             createArt("천원짜리 변호사", 2022, DRAMA, Arrays.asList(actor26, actor49), Arrays.asList(location24));
+            createArt("동백꽃 필 무렵", 2019, DRAMA, Arrays.asList(actor38, actor52, actor53, actor54, actor55), Arrays.asList(location25, location26, location27, location28));
+            createArt("Ditto", 2022, MUSIC, Arrays.asList(actor56, actor57, actor58, actor59), Arrays.asList(location29, location30));
+            createArt("변신자동차 또봇x", 2010, ANIMATION, Arrays.asList(actor60, actor61), Arrays.asList(location31));
+            createArt("호텔 델루나", 2019, DRAMA, Arrays.asList(actor62, actor63, actor64, actor65), Arrays.asList(location32, location33, location34, location35));
         }
 
 

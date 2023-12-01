@@ -35,6 +35,6 @@ public class HomeController {
         Page<Art> paging = artService.findArtsPage(artSearch, PageRequest.of(page, 4));
         model.addAttribute("paging", paging);
 
-        return "/mainV4";
+        return "/mainV4-";
     }
 }
