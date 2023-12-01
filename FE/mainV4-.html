@@ -57,14 +57,14 @@
 						<div th:if="${iterStat.index == 0}" id="content-box-1">
 							<tr>
 								<div id="cb1-info">
-								<td th:text="${art.genreStatus}" onchange="toggleMenu()"></td><br>
-								<td th:text="'작품명 : ' + ${art.name}"></td><br>
+								<td th:text="${art.genreStatus}" onchange="toggleMenu()" style="font-family: 'Gugi'; font-size: 14px;"></td><br>
+								<td th:text="'작품명 : ' + ${art.name}" style="font-family: 'Gugi'; font-size: 14px;"></td><br>
 								<th th:each="participate : ${art.participates}"
-									th:text="${participate.actorName}"></th>
+									th:text="${participate.actorName}" style="font-family: 'Gugi'; font-size: 14px;"></th>
 								</div>
-								<div id="cb1-loc">
+								<div id="cb1-loc" style="font-family: 'Gugi'; font-size: 5px;">
 								<p th:each="filmed : ${art.filmedList}"
-									th:text="'▶'+${filmed.location.Loc_name} + ' : ' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"></p>
+									th:text="'▶'+${filmed.location.Loc_name} + ' : ' + ${filmed.location.CTPRVN_NM} + ' ' + ${filmed.location.SIGNGU_NM} + ' ' + ${filmed.location.Specific_Addr_NM}"style="font-family: 'Gugi'; font-size: 5px;"></p>
 								</div>
 							</tr>
 						</div>
