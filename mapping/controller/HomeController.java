@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 
@@ -35,6 +37,6 @@ public class HomeController {
         Page<Art> paging = artService.findArtsPage(artSearch, PageRequest.of(page, 4));
         model.addAttribute("paging", paging);
 
-        return "/mainV4-";
+        return "/main";
     }
 }

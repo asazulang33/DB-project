@@ -93,7 +93,7 @@ public class ArtRepository {
         }
 
         if (StringUtils.hasText(artSearch.getArtName())) {
-            predicates.add(cb.like(art.get("name"), "%" + artSearch.getArtName() + "%"));
+            predicates.add(cb.like(art.get("Name"), "%" + artSearch.getArtName() + "%"));
         }
 
         cq.where(cb.and(predicates.toArray(new Predicate[0])));
