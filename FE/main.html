@@ -53,6 +53,13 @@
 
 				<!-- 컨텐츠 4개씩 표시 -->
 				<div id="select-content">
+					<div th:if="${paging.empty}">
+						<script type="text/javascript">
+            				alert('검색 결과가 없습니다.');
+            				window.location.href = '/';
+        				</script>
+					</div>
+
 					<div th:each="art, iterStat : ${paging.content}">
 						<div th:if="${iterStat.index == 0}" id="content-box-1">
 							<tr>
@@ -187,8 +194,6 @@
 				/*[/]*/
 			  /*[/]*/
 
-
-
 			  positions.forEach(function(position) {
 				geocoder.addressSearch(position.address, function(result, status) {
 				  if (status === kakao.maps.services.Status.OK) {
@@ -199,12 +204,6 @@
 
 					});
 					var customOverlay = new kakao.maps.CustomOverlay({ map : map, position: coords, content: '<div class="customoverlay";">' + position.title + '</div>', yAnchor: 1});
-
-
-
-
-
-
 					bounds.extend(coords);
 				  }
 				});
@@ -212,8 +211,7 @@
 
 			   	setTimeout(function() {
     				map.setBounds(bounds);
-  				}, 250);
-
+  				}, 230);
 			  /*]]>*/
 			</script>
 			<div id="footer">Ajou University 2023-1 Database Final project&nbsp;&nbsp;&nbsp;</div>
