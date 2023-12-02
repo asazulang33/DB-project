@@ -33,3 +33,4 @@
 *12.03일자 디자인 개선, 페이징 기능, 경고 기능 추가
 ![image](https://github.com/asazulang33/DB-project/assets/88483964/7b17c450-d485-4850-8225-a5a3abedc584)
 ![image](https://github.com/asazulang33/DB-project/assets/88483964/5478dfdb-6cb9-4cf0-a8ea-a88a7387d502)
+![image](https://github.com/asazulang33/DB-project/assets/88483964/4be88574-b5f9-4e42-ad8e-93964b345813)
