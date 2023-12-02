@@ -30,5 +30,5 @@
 *11.30일자 지도에 작품 정보 표시
 ![KakaoTalk_20231130_164728953](https://github.com/asazulang33/DB-project/assets/88483964/098d89bb-4322-410f-8c63-d2d0c8795128)
 
-* 12.03일자 경고 기능 추가
+*12.03일자 경고 기능 추가
 ![image](https://github.com/asazulang33/DB-project/assets/88483964/7b17c450-d485-4850-8225-a5a3abedc584)
