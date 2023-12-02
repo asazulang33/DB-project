@@ -172,6 +172,7 @@
 	text-align: center;
 	flex-wrap: wrap;
 	display: flex;
+	color: blue;
 }
 #cb1-name{
 	height: 100%;
@@ -184,6 +185,7 @@
 	text-align: center;
 	flex-wrap: wrap;
 	display: flex;
+	color: blue;
 }
 #cb1-part {
 	height: 30%;
@@ -208,6 +210,7 @@
 	word-break: break-all;
 	flex-wrap: wrap;
 	transition: left .5s;
+	color: green;
 }
 #content-box-2 {
 	height: calc(100%/4);
@@ -245,6 +248,7 @@
 	text-align: center;
 	flex-wrap: wrap;
 	display: flex;
+	color: blue;
 }
 #cb2-name{
 	height: 100%;
@@ -257,6 +261,7 @@
 	text-align: center;
 	flex-wrap: wrap;
 	display: flex;
+	color: blue;
 }
 #cb2-part {
 	height: 30%;
@@ -281,6 +286,7 @@
 	word-break: break-all;
 	flex-wrap: wrap;
 	transition: left .5s;
+	color: green;
 }
 #content-box-3 {
 	height: calc(100%/4);
@@ -318,6 +324,7 @@
 	text-align: center;
 	flex-wrap: wrap;
 	display: flex;
+	color: blue;
 }
 #cb3-name{
 	height: 100%;
@@ -330,6 +337,7 @@
 	text-align: center;
 	flex-wrap: wrap;
 	display: flex;
+	color: blue;
 }
 #cb3-part {
 	height: 30%;
@@ -354,6 +362,7 @@
 	word-break: break-all;
 	flex-wrap: wrap;
 	transition: left .5s;
+	color: green;
 }
 #content-box-4 {
 	height: calc(100%/4);
@@ -391,6 +400,7 @@
 	text-align: center;
 	flex-wrap: wrap;
 	display: flex;
+	color: blue;
 }
 #cb4-name{
 	height: 100%;
@@ -403,6 +413,7 @@
 	text-align: center;
 	flex-wrap: wrap;
 	display: flex;
+	color: blue;
 }
 #cb4-part {
 	height: 30%;
@@ -427,6 +438,7 @@
 	word-break: break-all;
 	flex-wrap: wrap;
 	transition: left .5s;
+	color: green;
 }
 
 .slider {
