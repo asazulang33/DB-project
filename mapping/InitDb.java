@@ -176,6 +176,19 @@ public class InitDb {
             Actor actor65 = createActor("김수현", "남자");
             em.persist(actor65);
 
+            // BOOK
+            Actor actor66 = createActor("홍설", "여자");
+            em.persist(actor66);
+            Actor actor67 = createActor("유정", "남자");
+            em.persist(actor67);
+            Actor actor68 = createActor("백인호", "남자");
+            em.persist(actor68);
+            Actor actor69 = createActor("김상철", "남자");
+            em.persist(actor69);
+            Actor actor70 = createActor("장보라", "여자");
+            em.persist(actor70);
+
+
 
             // 장소 생성 및 저장
             // 이하 기생충
@@ -266,6 +279,16 @@ public class InitDb {
             Location location35 = Location.createLoc("한국보건대학교(폐교,사유지)", "경상북도" , "김천시", "어모면 옥율리 산 27-1");
             em.persist(location35);
 
+            //BOOK
+            Location location36 = Location.createLoc("건국대학교 박물관", "서울특별시" , "광진시", "아차산로 263");
+            em.persist(location36);
+            Location location37 = Location.createLoc("건국대학교 학생회관", "서울특별시" , "광진구 화양동", "능동로 120");
+            em.persist(location37);
+            Location location38 = Location.createLoc("문광저수지 은행나무길", "충북" , "괴산군 문광면", "양곡리 55");
+            em.persist(location38);
+            Location location39 = Location.createLoc("영동 금강둘레길", "충북" , "영동군 양산면", "봉곡리");
+            em.persist(location39);
+
 
             // 작품 생성 및 저장
             createArt("기생충", 2019, MOVIE, Arrays.asList(actor1, actor2, actor3, actor4, actor5, actor6, actor7), Arrays.asList(location1, location2, location3, location4, location5, location6));
@@ -288,6 +311,7 @@ public class InitDb {
             createArt("Ditto", 2022, MUSIC, Arrays.asList(actor56, actor57, actor58, actor59), Arrays.asList(location29, location30));
             createArt("변신자동차 또봇x", 2010, ANIMATION, Arrays.asList(actor60, actor61), Arrays.asList(location31));
             createArt("호텔 델루나", 2019, DRAMA, Arrays.asList(actor62, actor63, actor64, actor65), Arrays.asList(location32, location33, location34, location35));
+            createArt("치즈 인 더 트랩", 2018,BOOK, Arrays.asList(actor66, actor67, actor68, actor69, actor70), Arrays.asList(location36, location37, location38, location39));
         }
 
 
