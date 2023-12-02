@@ -1,6 +1,8 @@
 # DB-project
 데이터베이스 프로젝트 - 지도기반 성지순례 프로젝트 만들기
 
+Spring boot, MySql, thymeleaf, Kakao api를 활용한 작품 및 지도 검색 프로젝트
+
 * 11.24일자 도메인 추가
 
 * 11.27일자 도메인 수정, Repository, Service, Controller 추가 + DB 연동 + html thymeleaf 연동
