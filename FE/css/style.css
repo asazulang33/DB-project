@@ -93,7 +93,6 @@
 	flex-wrap: wrap;
 }
 #nav-box-2 {
-	width: 30%;
 	height: 100%;
 	background: #2980B9;
 	position: relative;
@@ -163,7 +162,7 @@
 }
 #cb1-type{
 	height: 100%;
-	width: 50%;
+	width: 30%;
 	font-family: 'Gugi';
 	font-size: 14px;
 	word-break: break-all;
@@ -176,7 +175,7 @@
 }
 #cb1-name{
 	height: 100%;
-	width: 50%;
+	width: 70%;
 	font-family: 'Gugi';
 	font-size: 14px;
 	word-break: break-all;
@@ -239,7 +238,7 @@
 }
 #cb2-type{
 	height: 100%;
-	width: 50%;
+	width: 30%;
 	font-family: 'Gugi';
 	font-size: 14px;
 	word-break: break-all;
@@ -252,7 +251,7 @@
 }
 #cb2-name{
 	height: 100%;
-	width: 50%;
+	width: 70%;
 	font-family: 'Gugi';
 	font-size: 14px;
 	word-break: break-all;
@@ -315,7 +314,7 @@
 }
 #cb3-type{
 	height: 100%;
-	width: 50%;
+	width: 30%;
 	font-family: 'Gugi';
 	font-size: 14px;
 	word-break: break-all;
@@ -328,7 +327,7 @@
 }
 #cb3-name{
 	height: 100%;
-	width: 50%;
+	width: 70%;
 	font-family: 'Gugi';
 	font-size: 14px;
 	word-break: break-all;
@@ -391,7 +390,7 @@
 }
 #cb4-type{
 	height: 100%;
-	width: 50%;
+	width: 30%;
 	font-family: 'Gugi';
 	font-size: 14px;
 	word-break: break-all;
@@ -404,7 +403,7 @@
 }
 #cb4-name{
 	height: 100%;
-	width: 50%;
+	width: 70%;
 	font-family: 'Gugi';
 	font-size: 14px;
 	word-break: break-all;
