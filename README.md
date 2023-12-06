@@ -36,3 +36,5 @@ Spring boot, MySql, thymeleaf, Kakao api를 활용한 작품 및 지도 검색 �
 ![image](https://github.com/asazulang33/DB-project/assets/88483964/7b17c450-d485-4850-8225-a5a3abedc584)
 ![image](https://github.com/asazulang33/DB-project/assets/88483964/5478dfdb-6cb9-4cf0-a8ea-a88a7387d502)
 ![image](https://github.com/asazulang33/DB-project/assets/88483964/4be88574-b5f9-4e42-ad8e-93964b345813)
+
+* 12.07일자 Enum타입이 데이터베이스 정규화를 위반하기에 Genre 테이블 추가 및 관련 기능 수정 
