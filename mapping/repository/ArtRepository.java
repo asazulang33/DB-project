@@ -3,11 +3,9 @@ package jpaDB.mapping.repository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Predicate;
-import jakarta.persistence.criteria.Root;
+import jakarta.persistence.criteria.*;
 import jpaDB.mapping.domain.Art;
+import jpaDB.mapping.domain.Genre;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -18,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
+@SuppressWarnings("unchecked")
 public class ArtRepository {
 
     @PersistenceContext
@@ -39,39 +38,37 @@ public class ArtRepository {
 
     // 작품명, 장르를 기반으로 찾아내는 로직
     public List<Art> findAll(ArtSearch artSearch) {
-
         String jpql = "select a from Art a";
-        boolean Condition = true;
+        boolean condition = true;
 
-        // 장르 상태로 검색
-        if (artSearch.getGenreStatus() != null) {
-            if (Condition) {
+        // 장르로 검색
+        if (artSearch.getGenre() != null && StringUtils.hasText(artSearch.getGenre().getGenreName())) {
+            if (condition) {
                 jpql += " where";
-                Condition = false;
+                condition = false;
             } else {
                 jpql += " and";
             }
-            jpql += " a.genreStatus = :genreStatus";
+            jpql += " a.genre.genreName = :genreName";
         }
 
         // 작품명으로 검색
         if (StringUtils.hasText(artSearch.getArtName())) {
-            if (Condition) {
+            if (condition) {
                 jpql += " where";
-                Condition = false;
+                condition = false;
             } else {
                 jpql += " and";
             }
             jpql += " a.Name like :artName";
         }
 
-        // 쿼리 생성, 결과 : 1000개
-        TypedQuery<Art> query = em.createQuery(jpql, Art.class)
-                .setMaxResults(1000);
+        // 쿼리 생성
+        TypedQuery<Art> query = em.createQuery(jpql, Art.class);
 
         // 파라미터 설정
-        if (artSearch.getGenreStatus() != null) {
-            query = query.setParameter("genreStatus", artSearch.getGenreStatus());
+        if (artSearch.getGenre() != null && StringUtils.hasText(artSearch.getGenre().getGenreName())) {
+            query = query.setParameter("genreName", artSearch.getGenre().getGenreName());
         }
         if (StringUtils.hasText(artSearch.getArtName())) {
             query = query.setParameter("artName", "%" + artSearch.getArtName() + "%");
@@ -88,8 +85,8 @@ public class ArtRepository {
         List<Predicate> predicates = new ArrayList<>();
 
         // 필터링 조건 추가
-        if (artSearch.getGenreStatus() != null) {
-            predicates.add(cb.equal(art.get("genreStatus"), artSearch.getGenreStatus()));
+        if (artSearch.getGenre() != null && StringUtils.hasText(artSearch.getGenre().getGenreName())) {
+            predicates.add(cb.equal(art.get("genre").get("genreName"), artSearch.getGenre().getGenreName()));
         }
 
         if (StringUtils.hasText(artSearch.getArtName())) {

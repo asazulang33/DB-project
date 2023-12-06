@@ -1,6 +1,6 @@
 package jpaDB.mapping.repository;
 
-import jpaDB.mapping.domain.GenreStatus;
+import jpaDB.mapping.domain.Genre;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,5 +8,6 @@ import lombok.Setter;
 public class ArtSearch {
 
     private String artName;         // 작품명
-    private GenreStatus genreStatus;  // Movie, Drama, Book
+    private Genre genre;  // Movie, Drama, Book
+
 }

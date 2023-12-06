@@ -1,15 +1,13 @@
 package jpaDB.mapping.service;
 
 import jpaDB.mapping.domain.*;
-import jpaDB.mapping.repository.ActorRepository;
-import jpaDB.mapping.repository.ArtRepository;
-import jpaDB.mapping.repository.ArtSearch;
-import jpaDB.mapping.repository.LocationRepository;
+import jpaDB.mapping.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,6 +20,7 @@ public class ArtService {
     private final ArtRepository artRepository;
     private final ActorRepository actorRepository;
     private final LocationRepository locationRepository;
+    private final GenreRepository genreRepository;
 
 
     public List<Art> findAllArts() {
@@ -38,4 +37,7 @@ public class ArtService {
         return artRepository.findArtsPage(artSearch, pageable);
     }
 
+    public void setArtSearchGenre(ArtSearch artSearch, String genreStatus) {
+        genreRepository.setArtSearchGenre(artSearch, genreStatus);
+    }
 }

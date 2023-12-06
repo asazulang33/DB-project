@@ -3,6 +3,7 @@ package jpaDB.mapping;
 import jakarta.annotation.PostConstruct;
 import jakarta.persistence.EntityManager;
 import jpaDB.mapping.domain.*;
+import jpaDB.mapping.repository.ArtSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,14 +30,20 @@ public class InitDb {
 
         private final EntityManager em;
 
-        GenreStatus MOVIE = GenreStatus.MOVIE;
-        GenreStatus DRAMA = GenreStatus.DRAMA;
-        GenreStatus BOOK = GenreStatus.BOOK;
-        GenreStatus ANIMATION = GenreStatus.ANIMATION;
-        GenreStatus MUSIC = GenreStatus.MUSIC;
-
         public void dbInit() {
             System.out.println("Init" + this.getClass());
+
+            Genre MOVIE = Genre.createGenre("MOVIE");
+            em.persist(MOVIE);
+            Genre DRAMA = Genre.createGenre("DRAMA");
+            em.persist(DRAMA);
+            Genre BOOK = Genre.createGenre("BOOK");
+            em.persist(BOOK);
+            Genre ANIMATION = Genre.createGenre("ANIMATION");
+            em.persist(ANIMATION);
+            Genre MUSIC = Genre.createGenre("MUSIC");
+            em.persist(MUSIC);
+
 
             // 배우 생성 및 저장
             Actor actor1 = createActor("송강호", "남자");
@@ -316,13 +323,13 @@ public class InitDb {
 
 
         // 작품생성 : 작품명, 연도, 장르, 배우들, 촬영장소들
-        private void createArt(String name, Integer year, GenreStatus genreStatus, List<Actor> actors, List<Location> locations) {
+        private void createArt(String name, Integer year, Genre genre, List<Actor> actors, List<Location> locations) {
             List<Filmed> filmedList = locations.stream()
                     .map(Filmed::createFilmed)
                     .collect(Collectors.toList());
             filmedList.forEach(em::persist);
 
-            Art art = Art.createArt(name, year, filmedList, actors, genreStatus);
+            Art art = Art.createArt(name, year, filmedList, actors, genre);
             em.persist(art);
         }
 
@@ -332,5 +339,6 @@ public class InitDb {
             actor.setSex(sex);
             return actor;
         }
+
     }
 }

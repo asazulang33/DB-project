@@ -7,7 +7,6 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Entity
 @Getter
@@ -31,8 +30,9 @@ public class Art {
     @OneToMany(mappedBy = "art", cascade = CascadeType.ALL)
     private List<Participates> participates = new ArrayList<>();
 
-    @Enumerated(EnumType.STRING)
-    private GenreStatus genreStatus;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "g_id")
+    private Genre genre;
 
     // 연관관계 메서드
     public void addFilmed(Filmed filmed) {
@@ -45,12 +45,17 @@ public class Art {
         participate.setArt(this);
     }
 
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+        genre.getArt().add(this);
+    }
+
     // 비즈니스 로직
-    public static Art createArt(String artName, Integer year, List<Filmed> filmedList, List<Actor> actors, GenreStatus genreStatus) {
+    public static Art createArt(String artName, Integer year, List<Filmed> filmedList, List<Actor> actors, Genre genre) {
         Art art = new Art();
         art.setName(artName);
         art.setYear(year);
-        art.setGenreStatus(genreStatus);
+        art.setGenre(genre);
 
         for (Filmed filmed : filmedList) {
             art.addFilmed(filmed);
