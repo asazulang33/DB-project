@@ -195,6 +195,41 @@ public class InitDb {
             Actor actor70 = createActor("장보라", "여자");
             em.persist(actor70);
 
+            // 12.07 추가
+            Actor actor71 = createActor("이재욱", "남자");
+            em.persist(actor71);
+            Actor actor72 = createActor("정소민", "여자");
+            em.persist(actor72);
+            Actor actor73 = createActor("황민현", "남자");
+            em.persist(actor73);
+            Actor actor74 = createActor("유준상", "남자");
+            em.persist(actor74);
+            Actor actor75 = createActor("신승호", "남자");
+            em.persist(actor75);
+            Actor actor76 = createActor("오나라", "여자");
+            em.persist(actor76);
+            Actor actor77 = createActor("조재윤", "남자");
+            em.persist(actor77);
+            Actor actor78 = createActor("유인수", "남자");
+            em.persist(actor78);
+            Actor actor79 = createActor("아린", "여자");
+            em.persist(actor79);
+
+            Actor actor80 = createActor("조보아", "여자");
+            em.persist(actor80);
+            Actor actor81 = createActor("로운", "남자");
+            em.persist(actor81);
+            Actor actor82 = createActor("하준", "남자");
+            em.persist(actor82);
+            Actor actor83 = createActor("유라", "여자");
+            em.persist(actor83);
+
+            Actor actor84 = createActor("유재명", "남자");
+            em.persist(actor84);
+            Actor actor85 = createActor("이현욱", "남자");
+            em.persist(actor85);
+            Actor actor86 = createActor("이호정", "여자");
+            em.persist(actor86);
 
 
             // 장소 생성 및 저장
@@ -263,38 +298,115 @@ public class InitDb {
             em.persist(location26);
             Location location27 = Location.createLoc("아라 예술촌", "경북 포항시", "남구", "구룡포읍 용주로7번길 30");
             em.persist(location27);
-            Location location28 = Location.createLoc("대보항", "경북 포항시" , "남구", "호미곶면 구만길 279-8");
+            Location location28 = Location.createLoc("대보항", "경북 포항시", "남구", "호미곶면 구만길 279-8");
             em.persist(location28);
 
             // 뉴진스 - Ditto 뮤비 촬영지
-            Location location29 = Location.createLoc("계성중고등학교", "대구" , "중구", "대신동 277-1");
+            Location location29 = Location.createLoc("계성중고등학교", "대구", "중구", "대신동 277-1");
             em.persist(location29);
-            Location location30 = Location.createLoc("청라언덕(관광명소)", "대구" , "중구", "달구벌대로 2029");
+            Location location30 = Location.createLoc("청라언덕(관광명소)", "대구", "중구", "달구벌대로 2029");
             em.persist(location30);
 
             // 변신 로봇 또봇
-            Location location31= Location.createLoc("구로경찰서", "서울" , "구로구", "가마산로 235");
+            Location location31 = Location.createLoc("구로경찰서", "서울", "구로구", "가마산로 235");
             em.persist(location31);
 
             //호텔 델루나
-            Location location32 = Location.createLoc("목포근대역사관 1관", "전남" , "목포시", "영산로29번길 6");
+            Location location32 = Location.createLoc("목포근대역사관 1관", "전남", "목포시", "영산로29번길 6");
             em.persist(location32);
-            Location location33 = Location.createLoc("파라다이스시티(호텔)", "인천" , "중구", "영종해안남로321번길 186");
+            Location location33 = Location.createLoc("파라다이스시티(호텔)", "인천", "중구", "영종해안남로321번길 186");
             em.persist(location33);
-            Location location34 = Location.createLoc("망상해변(해수욕장)", "강원특별자치도" , "동해시", "동해대로 6270-10");
+            Location location34 = Location.createLoc("망상해변(해수욕장)", "강원특별자치도", "동해시", "동해대로 6270-10");
             em.persist(location34);
-            Location location35 = Location.createLoc("한국보건대학교(폐교,사유지)", "경상북도" , "김천시", "어모면 옥율리 산 27-1");
+            Location location35 = Location.createLoc("한국보건대학교(폐교,사유지)", "경상북도", "김천시", "어모면 옥율리 산 27-1");
             em.persist(location35);
 
             //BOOK
-            Location location36 = Location.createLoc("건국대학교 박물관", "서울특별시" , "광진시", "아차산로 263");
+            Location location36 = Location.createLoc("건국대학교 박물관", "서울특별시", "광진시", "아차산로 263");
             em.persist(location36);
-            Location location37 = Location.createLoc("건국대학교 학생회관", "서울특별시" , "광진구 화양동", "능동로 120");
+            Location location37 = Location.createLoc("건국대학교 학생회관", "서울특별시", "광진구 화양동", "능동로 120");
             em.persist(location37);
-            Location location38 = Location.createLoc("문광저수지 은행나무길", "충북" , "괴산군 문광면", "양곡리 55");
+            Location location38 = Location.createLoc("문광저수지 은행나무길", "충북", "괴산군 문광면", "양곡리 55");
             em.persist(location38);
-            Location location39 = Location.createLoc("영동 금강둘레길", "충북" , "영동군 양산면", "봉곡리");
+            Location location39 = Location.createLoc("영동 금강둘레길", "충북", "영동군 양산면", "봉곡리");
             em.persist(location39);
+
+            // 12.07 추가
+            Location location40 = Location.createLoc("문경새재 오픈 세트장", "경상북도 문경시", "문경읍", "상초리 84-2");
+            em.persist(location40);
+            Location location41 = Location.createLoc("용안굴", "제주특별자치도 제주시", "애월읍", "무수천3경");
+            em.persist(location41);
+            Location location42 = Location.createLoc("체오름(사유지)", "제주특별자치도 제주시", "구좌읍", "송당리 산62");
+            em.persist(location42);
+            Location location43 = Location.createLoc("부여 성흥산성(사랑나무)", "충청남도 부여시", "부여군", "임천면 군사리 산7-10");
+            em.persist(location43);
+            Location location44 = Location.createLoc("가산수피아", "경상북도", "칠곡군", "가산면 학하들안2길 105");
+            em.persist(location44);
+            Location location45 = Location.createLoc("세연정(판석보)", "전라남도", "완도군", "가보길면 부황길 57");
+            em.persist(location45);
+            Location location46 = Location.createLoc("안동 군자마을 한옥스테이", "경상북도", "안동시", "와룡면 오천리 산27-1");
+            em.persist(location46);
+            Location location47 = Location.createLoc("농월정국민관광지", "경상남도", "함양군", "안의면 월림리 1472");
+            em.persist(location47);
+            Location location48 = Location.createLoc("백운동 원림", "전라남도", "강진군", "성전면 월하리 546번지");
+            em.persist(location48);
+            Location location49 = Location.createLoc("명옥헌 원림", "전라남도", "담양군", "고서면 후산길 103");
+            em.persist(location49);
+            Location location50 = Location.createLoc("나주영상테마파크", "전라남도", "나주시", "공산면 덕음로 450");
+            em.persist(location50);
+            Location location51 = Location.createLoc("드라마 《바람의 화원》 촬영지", "충청북도", "괴산군", "청천면 송문로덕평1길 44-18");
+            em.persist(location51);
+            Location location52 = Location.createLoc("운보의집운보미술관", "충청북도", "청주시", "청원구 내수읍 형동2길 92-41");
+            em.persist(location52);
+            Location location53 = Location.createLoc("설악산 권금성", "강원도", "속초시", "설악동 산41");
+            em.persist(location53);
+            Location location54 = Location.createLoc("함안 말이산 고본군", "경상남도", "함안군", "가야읍 고분길 153-31");
+            em.persist(location54);
+            Location location55 = Location.createLoc("수옥폭포", "충청북도", "괴산군", "연풍면 원풍리");
+            em.persist(location55);
+            Location location56 = Location.createLoc("드라마 《최참판댁》 촬영지", "경상남도", "하동군", "악양면 평사리길 66-7");
+            em.persist(location56);
+            Location location57 = Location.createLoc("계명대학교 성서캠퍼스 계명한학촌", "대구광역시 달서구", "호산동", "산2-1");
+            em.persist(location57);
+            Location location58 = Location.createLoc("문경 선유동 계곡", "경상북도", "문경시", "가은읍 완장리");
+            em.persist(location58);
+            Location location59 = Location.createLoc("고석정", "강원도", "철원군", "동송읍 태봉로 1825");
+            em.persist(location59);
+            Location location60 = Location.createLoc("아침고요수목원 서화연", "경기도", "가평군", "상면 수목원로 497");
+            em.persist(location60);
+            Location location61 = Location.createLoc("몰운대 서화연", "강원도", "정선군", "화암면 몰운리 산43");
+            em.persist(location61);
+            Location location62 = Location.createLoc("용머리해안", "제주특별자치도", "서귀포시", "안덕면 사계리 112-3");
+            em.persist(location62);
+            Location location63 = Location.createLoc("해식동굴", "충청남도", "태안군", "소원면 파도리 산 203");
+            em.persist(location63);
+            Location location64 = Location.createLoc("포천 아트밸리 천주호", "경기도", "포천시", "신북면 아트밸리로 234");
+            em.persist(location64);
+
+
+            Location location65 = Location.createLoc("포항시청", "경상북도", "포항시", "남구 시청로 1");
+            em.persist(location65);
+            Location location66 = Location.createLoc("스페이스워크", "경상북도", "포항시", "북구 두호동 산8");
+            em.persist(location66);
+
+            Location location67 = Location.createLoc("합천 영상테마파크", "경상남도", "합천군", "용주면 합천호수로 757");
+            em.persist(location67);
+            Location location68 = Location.createLoc("철원 역사문화공원", "강원도", "철원군", "철원읍 금강산로 262");
+            em.persist(location68);
+            Location location69 = Location.createLoc("영화 웰컴 투 동막골 촬영 세트장", "강원도", "평창군", "미탄면 동막골길 117");
+            em.persist(location69);
+            Location location70 = Location.createLoc("해양드라마세트장", "경상남도", "창원시", "마산합포구 구산면 석곡리 산183-2");
+            em.persist(location70);
+            Location location71 = Location.createLoc("황매산군립공원", "경상남도", "합천군", "가회면 황매산공원길 331");
+            em.persist(location71);
+            Location location72 = Location.createLoc("내장산국립공원 우화정", "전라북도", "정읍시", "내장동 산231");
+            em.persist(location72);
+            Location location73 = Location.createLoc("익산 교도소 세트장", "전라북도", "익산시", "성당면 함낭로 207");
+            em.persist(location73);
+            Location location74 = Location.createLoc("새만금 방조제", "전라북도", "익산시", "옥도면 신시도리 257");
+            em.persist(location74);
+            Location location75 = Location.createLoc("선샤인스튜디오", "충청남도", "논산시", "연무읍 봉황로 90");
+            em.persist(location75);
 
 
             // 작품 생성 및 저장
@@ -312,13 +424,22 @@ public class InitDb {
             createArt("마녀", 2023, MOVIE, Arrays.asList(actor4, actor46), Arrays.asList(location20));
             createArt("밀수", 2023, MOVIE, Arrays.asList(actor37, actor50), Arrays.asList(location21));
             createArt("닥터 차정숙", 2023, DRAMA, Arrays.asList(actor47, actor43), Arrays.asList(location22));
-            createArt("도적 : 칼의 소리", 2023, MOVIE, Arrays.asList(actor36, actor51), Arrays.asList(location23));
+            createArt("도적: 칼의 소리", 2023, MOVIE, Arrays.asList(actor36, actor51, actor84, actor85, actor86),
+                    Arrays.asList(location23, location40, location67, location68, location69, location70, location71, location72, location73, location74, location75));
             createArt("천원짜리 변호사", 2022, DRAMA, Arrays.asList(actor26, actor49), Arrays.asList(location24));
             createArt("동백꽃 필 무렵", 2019, DRAMA, Arrays.asList(actor38, actor52, actor53, actor54, actor55), Arrays.asList(location25, location26, location27, location28));
             createArt("Ditto", 2022, MUSIC, Arrays.asList(actor56, actor57, actor58, actor59), Arrays.asList(location29, location30));
             createArt("변신자동차 또봇x", 2010, ANIMATION, Arrays.asList(actor60, actor61), Arrays.asList(location31));
             createArt("호텔 델루나", 2019, DRAMA, Arrays.asList(actor62, actor63, actor64, actor65), Arrays.asList(location32, location33, location34, location35));
-            createArt("치즈 인 더 트랩", 2018,BOOK, Arrays.asList(actor66, actor67, actor68, actor69, actor70), Arrays.asList(location36, location37, location38, location39));
+            createArt("치즈 인 더 트랩", 2018, BOOK, Arrays.asList(actor66, actor67, actor68, actor69, actor70), Arrays.asList(location36, location37, location38, location39));
+            // 12.07 추가
+            createArt("환혼", 2022, DRAMA, Arrays.asList(actor71, actor72, actor73, actor74, actor75, actor76, actor77, actor78, actor79),
+                    Arrays.asList(location40, location41, location42, location43, location44, location45, location46, location47, location48, location49, location50,
+                            location51, location52, location53, location54, location55, location56, location57, location58, location59, location60,
+                            location61, location62, location63, location64));
+
+            createArt("이 연애는 불가항력", 2023, DRAMA, Arrays.asList(actor80, actor81, actor82, actor83),
+                    Arrays.asList(location65, location66));
         }
 
 
