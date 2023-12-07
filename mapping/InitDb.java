@@ -231,6 +231,38 @@ public class InitDb {
             Actor actor86 = createActor("이호정", "여자");
             em.persist(actor86);
 
+            // 트와이스
+            Actor actor87 = createActor("사나", "여자");
+            em.persist(actor87);
+            Actor actor88 = createActor("모모", "여자");
+            em.persist(actor88);
+            Actor actor89 = createActor("쯔위", "여자");
+            em.persist(actor89);
+            Actor actor90 = createActor("나연", "여자");
+            em.persist(actor90);
+            Actor actor91 = createActor("지효", "여자");
+            em.persist(actor91);
+            Actor actor92 = createActor("채영", "여자");
+            em.persist(actor92);
+            Actor actor93 = createActor("미나", "여자");
+            em.persist(actor93);
+            Actor actor94 = createActor("정연", "여자");
+            em.persist(actor94);
+            Actor actor95 = createActor("다현", "여자");
+            em.persist(actor95);
+
+            // 20세기 소년소녀
+            Actor actor96 = createActor("한예슬", "여자");
+            em.persist(actor96);
+            Actor actor97 = createActor("이상우", "남자");
+            em.persist(actor97);
+            Actor actor98 = createActor("류현경", "여자");
+            em.persist(actor98);
+            Actor actor99 = createActor("이상희", "여자");
+            em.persist(actor99);
+            Actor actor100 = createActor("오상진", "남자");
+            em.persist(actor100);
+
 
             // 장소 생성 및 저장
             // 이하 기생충
@@ -383,7 +415,6 @@ public class InitDb {
             Location location64 = Location.createLoc("포천 아트밸리 천주호", "경기도", "포천시", "신북면 아트밸리로 234");
             em.persist(location64);
 
-
             Location location65 = Location.createLoc("포항시청", "경상북도", "포항시", "남구 시청로 1");
             em.persist(location65);
             Location location66 = Location.createLoc("스페이스워크", "경상북도", "포항시", "북구 두호동 산8");
@@ -407,6 +438,26 @@ public class InitDb {
             em.persist(location74);
             Location location75 = Location.createLoc("선샤인스튜디오", "충청남도", "논산시", "연무읍 봉황로 90");
             em.persist(location75);
+
+            // 트와이스 SIGNAL 뮤직비디오
+            Location location76 = Location.createLoc("금오름(산)", "제주특별자치도", "제주시", "한림읍 금악리 산1-1");
+            em.persist(location76);
+
+            // 더미 데이터
+            Location location77 = Location.createLoc("주왕산국립공원(산)", "경북", "청송군", "주왕산면 상의리 산 6-1");
+            em.persist(location77);
+            Location location78 = Location.createLoc("영덕해맞이공원", "경북", "영덕군", "영덕읍 창포리 산 5-5");
+            em.persist(location78);
+            Location location79 = Location.createLoc("슈퍼마켓", "경북", "영덕군", "영덕읍 시걸길 198-2");
+            em.persist(location79);
+
+            // 20세기 소년소녀
+            Location location80 = Location.createLoc("더백푸드트럭", "서울특별시", "용산구", "신흥로20길 45-1");
+            em.persist(location80);
+            Location location81 = Location.createLoc("회현시민아파트", "서울특별시", "중구", "퇴계로8길 101");
+            em.persist(location81);
+            Location location82 = Location.createLoc("인천국제공항", "인천광역시", "중구", "공항로 272");
+            em.persist(location82);
 
 
             // 작품 생성 및 저장
@@ -440,6 +491,23 @@ public class InitDb {
 
             createArt("이 연애는 불가항력", 2023, DRAMA, Arrays.asList(actor80, actor81, actor82, actor83),
                     Arrays.asList(location65, location66));
+
+            createArt("SIGNAL", 2017, MUSIC, Arrays.asList(actor87, actor88, actor89, actor90, actor91, actor92, actor93, actor94, actor95),
+                    Arrays.asList(location76));
+
+            // 더미 데이터
+            createArt("등산(더미)", 1999, MOVIE, Arrays.asList(actor13, actor20, actor23, actor55, actor70, actor72, actor74, actor80),
+                    Arrays.asList(location77));
+            createArt("해맞이(더미)", 1999, BOOK, Arrays.asList(actor14, actor22, actor24, actor55, actor78, actor79, actor80, actor81),
+                    Arrays.asList(location78));
+            createArt("가게(더미)", 1999, DRAMA, Arrays.asList(actor15, actor23, actor25, actor35, actor45, actor55, actor65, actor71),
+                    Arrays.asList(location79));
+
+            // 20세기 소년소녀
+            createArt("20세기 소년소녀", 2017, DRAMA, Arrays.asList(actor53, actor96, actor97, actor98, actor99, actor100),
+                    Arrays.asList(location80, location81, location82));
+
+
         }
 
 
