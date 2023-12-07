@@ -7,10 +7,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.StringUtils;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @Transactional(readOnly = true)
@@ -18,8 +16,6 @@ import java.util.stream.Collectors;
 public class ArtService {
 
     private final ArtRepository artRepository;
-    private final ActorRepository actorRepository;
-    private final LocationRepository locationRepository;
     private final GenreRepository genreRepository;
 
 
@@ -27,7 +23,7 @@ public class ArtService {
         return artRepository.findAllArts();
     }
 
-    // 작품명, 장르로 찾는 로직
+    // 모든 작품을 찾는 기능
     public List<Art> findArts(ArtSearch artSearch) {
         return artRepository.findAll(artSearch);
     }
@@ -37,6 +33,7 @@ public class ArtService {
         return artRepository.findArtsPage(artSearch, pageable);
     }
 
+    // URL 장르 검색을 위한 기능
     public void setArtSearchGenre(ArtSearch artSearch, String genreStatus) {
         genreRepository.setArtSearchGenre(artSearch, genreStatus);
     }

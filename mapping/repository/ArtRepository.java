@@ -5,7 +5,6 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.*;
 import jpaDB.mapping.domain.Art;
-import jpaDB.mapping.domain.Genre;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -41,7 +40,7 @@ public class ArtRepository {
         String jpql = "select a from Art a";
         boolean condition = true;
 
-        // 장르로 검색
+        // 장르 검색
         if (artSearch.getGenre() != null && StringUtils.hasText(artSearch.getGenre().getGenreName())) {
             if (condition) {
                 jpql += " where";
@@ -52,7 +51,7 @@ public class ArtRepository {
             jpql += " a.genre.genreName = :genreName";
         }
 
-        // 작품명으로 검색
+        // 작품명 검색
         if (StringUtils.hasText(artSearch.getArtName())) {
             if (condition) {
                 jpql += " where";
@@ -77,6 +76,7 @@ public class ArtRepository {
         return query.getResultList();
     }
 
+    // 페이징 기능 및 작품 검색 기능
     public Page<Art> findArtsPage(ArtSearch artSearch, Pageable pageable) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Art> cq = cb.createQuery(Art.class);

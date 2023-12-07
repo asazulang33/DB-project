@@ -3,7 +3,6 @@ package jpaDB.mapping;
 import jakarta.annotation.PostConstruct;
 import jakarta.persistence.EntityManager;
 import jpaDB.mapping.domain.*;
-import jpaDB.mapping.repository.ArtSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -45,7 +44,7 @@ public class InitDb {
             em.persist(MUSIC);
 
 
-            // 배우 생성 및 저장
+            // 배우 생성 및 저장----------------------------------
             Actor actor1 = createActor("송강호", "남자");
             em.persist(actor1);
             Actor actor2 = createActor("이선균", "남자");
@@ -183,7 +182,7 @@ public class InitDb {
             Actor actor65 = createActor("김수현", "남자");
             em.persist(actor65);
 
-            // BOOK
+            // 치즈 인 더 트랩 BOOK
             Actor actor66 = createActor("홍설", "여자");
             em.persist(actor66);
             Actor actor67 = createActor("유정", "남자");
@@ -263,8 +262,36 @@ public class InitDb {
             Actor actor100 = createActor("오상진", "남자");
             em.persist(actor100);
 
+            // 닥터 프로스트
+            Actor actor130 = createActor("프로스트", "남자");
+            em.persist(actor130);
+            Actor actor131 = createActor("윤성아", "여자");
+            em.persist(actor131);
+            Actor actor132 = createActor("문성현", "남자");
+            em.persist(actor132);
+            Actor actor133 = createActor("천상원", "남자");
+            em.persist(actor133);
+            Actor actor134 = createActor("송선", "여자");
+            em.persist(actor134);
 
-            // 장소 생성 및 저장
+            // 인소의 법칙
+            Actor actor135 = createActor("함단이", "여자");
+            em.persist(actor135);
+            Actor actor136 = createActor("반여령", "여자");
+            em.persist(actor136);
+            Actor actor137 = createActor("반여단", "남자");
+            em.persist(actor137);
+            Actor actor138 = createActor("권은형", "남자");
+            em.persist(actor138);
+            Actor actor139 = createActor("우주인", "남자");
+            em.persist(actor139);
+            Actor actor140 = createActor("유천영", "남자");
+            em.persist(actor140);
+            Actor actor141 = createActor("이루다", "남자");
+            em.persist(actor141);
+
+
+            // 장소 생성 및 저장----------------------------------
             // 이하 기생충
             Location location1 = Location.createLoc("스카이피자(피자시대)", "서울시", "동작구", "노량진로6길 86");
             em.persist(location1);
@@ -459,8 +486,25 @@ public class InitDb {
             Location location82 = Location.createLoc("인천국제공항", "인천광역시", "중구", "공항로 272");
             em.persist(location82);
 
+            //닥터프로스트
+            Location location130 = Location.createLoc("서울시립대학교", "서울특별시" , "동대문구", "서울시립대로 163");
+            em.persist(location130);
+            Location location131 = Location.createLoc("서강대학교", "서울특별시" , "마포구", "백범로 35");
+            em.persist(location131);
+            Location location132 = Location.createLoc("로케이션어스(드라마 세트장)", "파주시" , "탄현면", "검산로 423-71");
+            em.persist(location132);
 
-            // 작품 생성 및 저장
+            //인소의 법칙
+            Location location134 = Location.createLoc("서현고등학교", "성남시" , "분당구", "분당로 87");
+            em.persist(location134);
+            Location location135 = Location.createLoc("에버랜드", "용인시" , "처인구 포곡읍", "에버랜드로 199");
+            em.persist(location135);
+            Location location136 = Location.createLoc("가평전원별장펜션", "경기도" , "가평군 북면", "백둔로650번길 62");
+            em.persist(location136);
+            Location location137 = Location.createLoc("임피리얼팰리스 부티크호텔", "서울특별시" , "용산구", "이태원로 221");
+            em.persist(location137);
+
+            // 작품 생성 및 저장----------------------------------
             createArt("기생충", 2019, MOVIE, Arrays.asList(actor1, actor2, actor3, actor4, actor5, actor6, actor7), Arrays.asList(location1, location2, location3, location4, location5, location6));
             createArt("모래시계", 2020, DRAMA, Arrays.asList(actor8, actor9, actor10, actor11), Arrays.asList(location7));
             createArt("극한직업", 2019, MOVIE, Arrays.asList(actor12, actor13, actor14, actor15, actor16), Arrays.asList(location8));
@@ -485,32 +529,22 @@ public class InitDb {
             createArt("치즈 인 더 트랩", 2018, BOOK, Arrays.asList(actor66, actor67, actor68, actor69, actor70), Arrays.asList(location36, location37, location38, location39));
             // 12.07 추가
             createArt("환혼", 2022, DRAMA, Arrays.asList(actor71, actor72, actor73, actor74, actor75, actor76, actor77, actor78, actor79),
-                    Arrays.asList(location40, location41, location42, location43, location44, location45, location46, location47, location48, location49, location50,
-                            location51, location52, location53, location54, location55, location56, location57, location58, location59, location60,
-                            location61, location62, location63, location64));
-
-            createArt("이 연애는 불가항력", 2023, DRAMA, Arrays.asList(actor80, actor81, actor82, actor83),
-                    Arrays.asList(location65, location66));
-
-            createArt("SIGNAL", 2017, MUSIC, Arrays.asList(actor87, actor88, actor89, actor90, actor91, actor92, actor93, actor94, actor95),
-                    Arrays.asList(location76));
+                    Arrays.asList(location40, location41, location42, location43, location44, location45, location46, location47, location48, location49, location50, location51,
+                            location52, location53, location54, location55, location56, location57, location58, location59, location60, location61, location62, location63, location64));
+            createArt("이 연애는 불가항력", 2023, DRAMA, Arrays.asList(actor80, actor81, actor82, actor83), Arrays.asList(location65, location66));
+            createArt("SIGNAL", 2017, MUSIC, Arrays.asList(actor87, actor88, actor89, actor90, actor91, actor92, actor93, actor94, actor95), Arrays.asList(location76));
+            createArt("20세기 소년소녀", 2017, DRAMA, Arrays.asList(actor53, actor96, actor97, actor98, actor99, actor100), Arrays.asList(location80, location81, location82));
+            createArt("닥터 프로스트", 2011,BOOK, Arrays.asList(actor130,actor131,actor132), Arrays.asList(location36));
+            createArt("인소의 법칙", 2015,BOOK, Arrays.asList(actor134,actor135,actor136,actor137), Arrays.asList(location36));
 
             // 더미 데이터
-            createArt("등산(더미)", 1999, MOVIE, Arrays.asList(actor13, actor20, actor23, actor55, actor70, actor72, actor74, actor80),
-                    Arrays.asList(location77));
-            createArt("해맞이(더미)", 1999, BOOK, Arrays.asList(actor14, actor22, actor24, actor55, actor78, actor79, actor80, actor81),
-                    Arrays.asList(location78));
-            createArt("가게(더미)", 1999, DRAMA, Arrays.asList(actor15, actor23, actor25, actor35, actor45, actor55, actor65, actor71),
-                    Arrays.asList(location79));
-
-            // 20세기 소년소녀
-            createArt("20세기 소년소녀", 2017, DRAMA, Arrays.asList(actor53, actor96, actor97, actor98, actor99, actor100),
-                    Arrays.asList(location80, location81, location82));
-
-
+            createArt("등산(더미)", 1999, MOVIE, Arrays.asList(actor13, actor20, actor23, actor55, actor70, actor72, actor74, actor80), Arrays.asList(location77));
+            createArt("해맞이(더미)", 1999, BOOK, Arrays.asList(actor14, actor22, actor24, actor55, actor78, actor79, actor80, actor81), Arrays.asList(location78));
+            createArt("가게(더미)", 1999, DRAMA, Arrays.asList(actor15, actor23, actor25, actor35, actor45, actor55, actor65, actor71), Arrays.asList(location79));
         }
 
 
+        // 로직----------------------------------
         // 작품생성 : 작품명, 연도, 장르, 배우들, 촬영장소들
         private void createArt(String name, Integer year, Genre genre, List<Actor> actors, List<Location> locations) {
             List<Filmed> filmedList = locations.stream()

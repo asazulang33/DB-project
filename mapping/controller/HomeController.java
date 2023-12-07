@@ -1,7 +1,6 @@
 package jpaDB.mapping.controller;
 
 import jpaDB.mapping.domain.Art;
-import jpaDB.mapping.domain.Genre;
 import jpaDB.mapping.repository.ArtSearch;
 import jpaDB.mapping.service.ArtService;
 import lombok.RequiredArgsConstructor;

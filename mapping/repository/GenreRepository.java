@@ -17,6 +17,7 @@ public class GenreRepository {
         return em.createQuery("select g from Genre g", Genre.class).getResultList();
     }
 
+    // URL 장르 검색을 위한 로직
     public void setArtSearchGenre(ArtSearch artSearch, String genreStatus) {
         if (genreStatus != null && !genreStatus.isEmpty()) {
             Genre genre = em.createQuery("select g from Genre g where g.genreName = :genreName", Genre.class)

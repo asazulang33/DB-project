@@ -8,6 +8,6 @@ import lombok.Setter;
 public class ArtSearch {
 
     private String artName;         // 작품명
-    private Genre genre;  // Movie, Drama, Book
+    private Genre genre;            // Movie, Drama, Book, ...
 
 }
